@@ -1,14 +1,13 @@
 ---
-title: Game Update 8/15/2025
+title: Game Devlog 8/15/2025
 description:  First Look at some Gameplay!
 date: 2025-08-15 00:00:00+0000
 categories:
     - Projects
 tags:
-    - SQL
-    - Tableau
-    - Data Cleaning
-    - Data Visualization
+    - Godot Engine
+    - Python
+    - Aseprite
 ---
 
 I’m excited to share the first gameplay video from my 2D pixel roguelite game! Right now, the character has a basic punch, a grapple swing mechanic, and just three rooms to explore, but it’s already fun to see everything coming together.
