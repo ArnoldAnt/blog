@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Cleaning on ArnoldAnt Blog</title><link>https://arnoldant.github.io/blog/tags/data-cleaning/</link><description>Recent content in Data Cleaning on ArnoldAnt Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://arnoldant.github.io/blog/tags/data-cleaning/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Cleaning/Visualization</title><link>https://arnoldant.github.io/blog/p/data-cleaning/visualization/</link><pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/data-cleaning/visualization/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/data-cleaning/visualization/cover.png" alt="Featured image of post Data Cleaning/Visualization" /&gt;&lt;p&gt;It’s been a while since I’ve worked on a personal project using Tableau and SQL, but I finally had a chance to dive back in with a dataset that caught my interest: Airbnb listings across New York City’s four major boroughs.&lt;/p&gt;
+&lt;p&gt;Using SQL to clean and explore the data, I built a Tableau dashboard to visualize key insights, including:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The number of listings per borough&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The highest and lowest Airbnb prices by borough&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The top 5 and lowest 5 rated listings based on star ratings&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It was a great way to practice combining SQL and Tableau while uncovering interesting patterns in NYC’s short-term rental market. I’m excited to share the dashboard and insights from this project, and I look forward to continuing to explore real-world datasets in creative ways.&lt;/p&gt;
+&lt;p&gt;Software used: SQL, DuckDB, DBeaver, Tableau Desktop&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://public.tableau.com/views/AirbnbBorough/Dashboard1?:language=en-US&amp;amp;publish=yes&amp;amp;:sid=&amp;amp;:redirect=auth&amp;amp;:display_count=n&amp;amp;:origin=viz_share_link" target="_blank" rel="noopener"
+&gt;Airbnb Dashboard Tableau Public&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

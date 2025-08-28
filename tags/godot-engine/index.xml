@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Godot Engine on ArnoldAnt Blog</title><link>https://arnoldant.github.io/blog/tags/godot-engine/</link><description>Recent content in Godot Engine on ArnoldAnt Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://arnoldant.github.io/blog/tags/godot-engine/index.xml" rel="self" type="application/rss+xml"/><item><title>Game Devlog 8/28/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-8/28/2025/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-8/28/2025/</guid><description>&lt;p&gt;🔥 Devlog Update – New Abilities, Sticky Terrain &amp;amp; Dungeon Progress! 🔥&lt;/p&gt;
+&lt;p&gt;Since the last update, I’ve been grinding away under the hood and adding a ton of new mechanics and systems to the game:&lt;/p&gt;
+&lt;p&gt;⚔️ Code &amp;amp; Systems Updates&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reworked player states and grapple system for smoother transitions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Improved how special terrain interacts with movement.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Optimized under-the-hood code for better performance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🏰 Dungeon Expansion&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Added a new dungeon room with unique layouts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Special terrain now plays a bigger role in exploration and challenge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔥 New Fire Abilities&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Flame Double Jump – launch yourself with a fiery boost! Does damage to unfortunate souls beneath you.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fire Shotgun – unleash a blast of pellet-like flames to clear enemies up close.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🕸️ Sticky Terrain&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A new environmental hazard: sticky ground that reduces your mobility and jump height, forcing more careful platforming and combat decisions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There’s still a lot to come, but I’m super excited about the direction the game is taking. Let me know what you think of the new abilities and terrain system!&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/KxXOuelvlVg"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Game Devlog 8/22/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-8/22/2025/</link><pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-8/22/2025/</guid><description>&lt;p&gt;It’s been a packed week of development, and the game is starting to feel more alive with each update. Here’s a breakdown of everything I’ve added since last time:&lt;/p&gt;
+&lt;p&gt;🏠 Placeholder Main Menu&lt;/p&gt;
+&lt;p&gt;The project finally has a main menu! It’s simple for now, but it includes the basics: Start, Options, and Exit. This small step makes the game feel more like a complete experience instead of just jumping straight into gameplay.&lt;/p&gt;
+&lt;p&gt;❤️ Classic Zelda-Style Health System&lt;/p&gt;
+&lt;p&gt;I’ve swapped out the old placeholder health bar for a heart-based system, inspired by the classics. Each heart represents a chunk of health, and losing them feels satisfying and clear in a way that fits the game’s retro-inspired style.&lt;/p&gt;
+&lt;p&gt;⚡ New Lightning Abilities&lt;/p&gt;
+&lt;p&gt;The main character’s powers continue to evolve with two huge new additions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Triple Lightning Strike – With the lightning ring equipped, you can now call down three bolts of destruction, chaining your power together for massive damage.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Aerial Lightning Slam – Jump into the air and crash down, unleashing a thunderous lightning blast that strikes both enemies and the ground itself.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both moves make combat feel more dynamic and give you more tools for chaining attacks together.&lt;/p&gt;
+&lt;p&gt;🗝️ Secret Areas &amp;amp; Treasure&lt;/p&gt;
+&lt;p&gt;Exploration just got more rewarding. I’ve added hidden rooms tucked away behind destructible terrain. If you’re curious enough to search, you’ll find secret chests waiting with valuable loot. This adds a nice layer of discovery and makes exploration more engaging.&lt;/p&gt;
+&lt;p&gt;👾 New Enemy: The Spewer&lt;/p&gt;
+&lt;p&gt;A fresh foe enters the battlefield: the Spewer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It burrows underground to reposition.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pops up to spit poison projectiles.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Forces you to stay mobile and adapt.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It’s a fun twist compared to the melee-focused enemies so far and adds variety to combat encounters.&lt;/p&gt;
+&lt;p&gt;💡 Lighting &amp;amp; Shadows&lt;/p&gt;
+&lt;p&gt;To improve atmosphere, I’ve implemented dynamic lighting with terrain casting shadows. This small change makes the world feel richer and adds depth to caves, secret areas, and combat arenas.&lt;/p&gt;
+&lt;p&gt;✅ What’s Next?&lt;/p&gt;
+&lt;p&gt;With combat, exploration, and visual polish all improving, the game is slowly shaping into something cohesive. Next up, I’ll be refining the feel of combat even more and expanding enemy variety.&lt;/p&gt;
+&lt;p&gt;Thanks for following along! This week’s changes made a huge difference in how the game plays and feels. Can’t wait to show you what’s coming next!&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/mAfnA43Iw9c"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Game Devlog 8/15/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-8/15/2025/</link><pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-8/15/2025/</guid><description>&lt;p&gt;I’m excited to share the first gameplay video from my 2D pixel roguelite game! Right now, the character has a basic punch, a grapple swing mechanic, and just three rooms to explore, but it’s already fun to see everything coming together.&lt;/p&gt;
+&lt;p&gt;In this clip, you’ll get a glimpse of the movement and combat mechanics, including grappling through rooms and defeating the first slime enemy. It’s still early days, but seeing the mechanics in action really brings the world I’m building to life.&lt;/p&gt;
+&lt;p&gt;I’ll be sharing more updates as the game grows, with new abilities, enemies, and levels. It’s exciting to finally give a peek behind the curtain at how the game is shaping up!&lt;/p&gt;
+&lt;p&gt;Software used: Python, Godot Engine, Aseprite&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/9XusotRm1eE"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Introduction to my Biggest Project</title><link>https://arnoldant.github.io/blog/p/introduction-to-my-biggest-project/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/introduction-to-my-biggest-project/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/introduction-to-my-biggest-project/cover.gif" alt="Featured image of post Introduction to my Biggest Project" /&gt;&lt;p&gt;It’s been a while since I last shared a project here. Life got busy, and I stepped away from posting updates for longer than I planned. I’m sorry for the hiatus, but I’m excited to be back with something a little different this time.&lt;/p&gt;
+&lt;p&gt;While most of my past posts have focused on data analysis, SQL, and R, I’ve recently revisited a long-time passion of mine: game development. Over the past few months, I’ve been working on a 2D pixel video game with roguelite mechanics, lightning-based abilities, and a story that balances lighthearted moments with a touch of tragedy. It’s been an amazing creative challenge, completely different from my usual analytical projects, but just as rewarding.&lt;/p&gt;
+&lt;p&gt;I’ll be sharing more updates on this game and new data-driven projects soon. Thanks for sticking around during the break, and I’m excited to bring more to this space again!&lt;/p&gt;
+&lt;p&gt;Software used: Python, Godot Engine, Aseprite&lt;/p&gt;</description></item></channel></rss>
