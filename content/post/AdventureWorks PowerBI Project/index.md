@@ -14,7 +14,7 @@ tags:
 
 I’ve been working with Tableau for a while, but recently I decided it was time to dive into Power BI. To get some hands-on practice, I chose a sample sales dataset and set out to build a dashboard that could highlight trends in products, territories, and revenue. What started as an experiment quickly turned into a fun project with some solid insights.
 
-# The Dataset
+## The Dataset
 
 For this project, I used the AdventureWorks sample sales database. It contains information about products, territories, subcategories, and sales over time.
 
@@ -28,7 +28,7 @@ Before building the visuals, I had to do a little data prep:
 
 This step made the visuals more intuitive and ready for analysis.
 
-# Building the Dashboard
+## Building the Dashboard
 
 I started by creating a few queries in Power BI’s Power Query Editor:
 
@@ -58,7 +58,7 @@ Along the way, I learned how to:
 
 * Clean up the design by removing chart backgrounds and adding a company logo.
 
-# Key Insights
+## Key Insights
 
 A few interesting things stood out:
 
@@ -68,7 +68,7 @@ A few interesting things stood out:
 
 * The monthly breakdown showed predictable peaks and dips, which could be useful for future forecasting.
 
-# Design Choices
+## Design Choices
 
 I wanted the dashboard to feel clean and modern, so I:
 
@@ -80,7 +80,7 @@ I wanted the dashboard to feel clean and modern, so I:
 
 * Arranged visuals logically: trends on the left, categories and maps on the right.
 
-# What I Learned
+## What I Learned
 
 This project helped me:
 
@@ -92,7 +92,7 @@ This project helped me:
 
 Compared to Tableau, Power BI felt more integrated with Microsoft tools and had a smoother workflow for data prep. Tableau still feels stronger for quick visual design, but Power BI shines when it comes to reporting and sharing in a business environment.
 
-# Next Steps
+## Next Steps
 
 If I were to expand this project, I’d like to:
 
@@ -102,7 +102,7 @@ If I were to expand this project, I’d like to:
 
 * Try embedding the interactive dashboard into my website instead of just sharing images.
 
-# Conclusion
+## Conclusion
 
 This was my first end-to-end project in Power BI, and I’m really happy with how it turned out. It’s one thing to follow tutorials, but working with an actual dataset and creating visuals from scratch is the best way to learn.
 
@@ -111,7 +111,6 @@ If you’re just starting with Power BI, I highly recommend picking a dataset th
 ![AdventureWorks Bicycles Dashboard](cover.png)
 
 SQL code used:
-
 
     SELECT TOP 1 People.FirstName, People.LastName, SalesTeam.SalesYTD
     FROM Sales.SalesPerson SalesTeam
@@ -154,4 +153,4 @@ SQL code used:
     ON soh.TerritoryID = st.TerritoryID
     GROUP BY st.Name, st.CountryRegionCode
     ORDER BY TotalSales DESC
-
+    
