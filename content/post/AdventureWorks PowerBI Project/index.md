@@ -112,46 +112,46 @@ If you’re just starting with Power BI, I highly recommend picking a dataset th
 
 SQL code used:
 
-```
-SELECT TOP 1 People.FirstName, People.LastName, SalesTeam.SalesYTD
-FROM Sales.SalesPerson SalesTeam
-JOIN Person.Person People
-ON People.BusinessEntityID = SalesTeam.BusinessEntityID
-ORDER BY SalesTeam.SalesYTD DESC
 
-SELECT Year(OrderDate) SaleYear, MONTH(OrderDate) SaleMonth, SUM(TotalDue) TotalSales
-FROM Sales.SalesOrderHeader Header
-GROUP BY Year(OrderDate), MONTH(OrderDate)
+    SELECT TOP 1 People.FirstName, People.LastName, SalesTeam.SalesYTD
+    FROM Sales.SalesPerson SalesTeam
+    JOIN Person.Person People
+    ON People.BusinessEntityID = SalesTeam.BusinessEntityID
+    ORDER BY SalesTeam.SalesYTD DESC
 
-SELECT ProductTable.Name ProductName, OrderTable.ProductID, SUM(OrderQty) TotalUnitsSold
-FROM Sales.SalesOrderDetail OrderTable
-JOIN Production.Product ProductTable
-ON ProductTable.ProductID = OrderTable.ProductID
-JOIN Production.ProductSubcategory ProductSubCategory
-ON ProductTable.ProductSubcategoryID = ProductSubCategory.ProductSubcategoryID
-JOIN Production.ProductCategory ProductCategory
-ON ProductSubCategory.ProductCategoryID = ProductCategory.ProductCategoryID
-WHERE ProductCategory.Name = 'Bikes'
-GROUP BY OrderTable.ProductID, ProductTable.Name
-ORDER BY TotalUnitsSold DESC
+    SELECT Year(OrderDate) SaleYear, MONTH(OrderDate) SaleMonth, SUM(TotalDue) TotalSales
+    FROM Sales.SalesOrderHeader Header
+    GROUP BY Year(OrderDate), MONTH(OrderDate)
+
+    SELECT ProductTable.Name ProductName, OrderTable.ProductID, SUM(OrderQty) TotalUnitsSold
+    FROM Sales.SalesOrderDetail OrderTable
+    JOIN Production.Product ProductTable
+    ON ProductTable.ProductID = OrderTable.ProductID
+    JOIN Production.ProductSubcategory ProductSubCategory
+    ON ProductTable.ProductSubcategoryID = ProductSubCategory.ProductSubcategoryID
+    JOIN Production.ProductCategory ProductCategory
+    ON ProductSubCategory.ProductCategoryID = ProductCategory.ProductCategoryID
+    WHERE ProductCategory.Name = 'Bikes'
+    GROUP BY OrderTable.ProductID, ProductTable.Name
+    ORDER BY TotalUnitsSold DESC
 
 
-SELECT ProductSubcategory.Name SubCategoryName, SUM(OrderQty) TotalUnitsSold
-FROM Sales.SalesOrderDetail OrderTable
-JOIN Production.Product ProductTable
-ON ProductTable.ProductID = OrderTable.ProductID
-JOIN Production.ProductSubcategory ProductSubCategory
-ON ProductTable.ProductSubcategoryID = ProductSubCategory.ProductSubcategoryID
-WHERE ProductSubcategory.Name LIKE '%bike%'
-AND ProductSubcategory.Name NOT LIKE '%bike rack%'
-AND ProductSubcategory.Name NOT LIKE '%bike stand%'
-GROUP BY ProductSubcategory.Name
-ORDER BY TotalUnitsSold DESC
+    SELECT ProductSubcategory.Name SubCategoryName, SUM(OrderQty) TotalUnitsSold
+    FROM Sales.SalesOrderDetail OrderTable
+    JOIN Production.Product ProductTable
+    ON ProductTable.ProductID = OrderTable.ProductID
+    JOIN Production.ProductSubcategory ProductSubCategory
+    ON ProductTable.ProductSubcategoryID = ProductSubCategory.ProductSubcategoryID
+    WHERE ProductSubcategory.Name LIKE '%bike%'
+    AND ProductSubcategory.Name NOT LIKE '%bike rack%'
+    AND ProductSubcategory.Name NOT LIKE '%bike stand%'
+    GROUP BY ProductSubcategory.Name
+    ORDER BY TotalUnitsSold DESC
 
-SELECT st.Name AS TerritoryName, st.CountryRegionCode, SUM(soh.TotalDue) AS TotalSales
-FROM Sales.SalesOrderHeader soh
-JOIN Sales.SalesTerritory st
-ON soh.TerritoryID = st.TerritoryID
-GROUP BY st.Name, st.CountryRegionCode
-ORDER BY TotalSales DESC
-```
+    SELECT st.Name AS TerritoryName, st.CountryRegionCode, SUM(soh.TotalDue) AS TotalSales
+    FROM Sales.SalesOrderHeader soh
+    JOIN Sales.SalesTerritory st
+    ON soh.TerritoryID = st.TerritoryID
+    GROUP BY st.Name, st.CountryRegionCode
+    ORDER BY TotalSales DESC
+
