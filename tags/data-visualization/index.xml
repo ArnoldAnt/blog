@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Visualization on ArnoldAnt Blog</title><link>https://arnoldant.github.io/blog/tags/data-visualization/</link><description>Recent content in Data Visualization on ArnoldAnt Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://arnoldant.github.io/blog/tags/data-visualization/index.xml" rel="self" type="application/rss+xml"/><item><title>Building My First Sales Dashboard in Power BI</title><link>https://arnoldant.github.io/blog/p/building-my-first-sales-dashboard-in-power-bi/</link><pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/building-my-first-sales-dashboard-in-power-bi/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/building-my-first-sales-dashboard-in-power-bi/cover.png" alt="Featured image of post Building My First Sales Dashboard in Power BI" /&gt;&lt;p&gt;I’ve been working with Tableau for a while, but recently I decided it was time to dive into Power BI. To get some hands-on practice, I chose a sample sales dataset and set out to build a dashboard that could highlight trends in products, territories, and revenue. What started as an experiment quickly turned into a fun project with some solid insights.&lt;/p&gt;
+&lt;h2 id="the-dataset"&gt;The Dataset
+&lt;/h2&gt;&lt;p&gt;For this project, I used the AdventureWorks sample sales database. It contains information about products, territories, subcategories, and sales over time.&lt;/p&gt;
+&lt;p&gt;Before building the visuals, I had to do a little data prep:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Converted month numbers into month names (so January, February, etc. instead of 1, 2, 3).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Changed fields like sales amount into a proper currency format.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Made sure territories like Southwest, Central, Northeast were mapped correctly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This step made the visuals more intuitive and ready for analysis.&lt;/p&gt;
+&lt;h2 id="building-the-dashboard"&gt;Building the Dashboard
+&lt;/h2&gt;&lt;p&gt;I started by creating a few queries in Power BI’s Power Query Editor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Most sold product → which bike had the highest sales volume.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Least sold product → which product underperformed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Subcategory breakdown → total units sold by bike type (mountain, road, touring, etc.).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sales by territory → performance across regions like the United States, Canada, UK, France, and more.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From there, I built out the visuals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A bar chart showing monthly sales trends.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Card visuals highlighting the best and worst sellers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A pie chart to illustrate the sales split by bike subcategory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A map visual to show sales by territory.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Along the way, I learned how to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Sort months properly using “Sort by Column.”&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add filters (slicers) so I could view results by year.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clean up the design by removing chart backgrounds and adding a company logo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="key-insights"&gt;Key Insights
+&lt;/h2&gt;&lt;p&gt;A few interesting things stood out:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Some bike subcategories were clear winners, dominating total units sold.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The U.S. territories (Central, Southwest, Northeast, etc.) made up the bulk of sales, but there was meaningful activity in Canada and Europe as well.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The monthly breakdown showed predictable peaks and dips, which could be useful for future forecasting.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="design-choices"&gt;Design Choices
+&lt;/h2&gt;&lt;p&gt;I wanted the dashboard to feel clean and modern, so I:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Removed unnecessary borders and backgrounds.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Used cards for quick KPIs (best seller, worst seller).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Placed the logo in the corner to give it a branded look.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arranged visuals logically: trends on the left, categories and maps on the right.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="what-i-learned"&gt;What I Learned
+&lt;/h2&gt;&lt;p&gt;This project helped me:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Get comfortable with Power BI’s query editor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Practice using filters and slicers to add interactivity.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Think about dashboard design in terms of both analysis and presentation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Compared to Tableau, Power BI felt more integrated with Microsoft tools and had a smoother workflow for data prep. Tableau still feels stronger for quick visual design, but Power BI shines when it comes to reporting and sharing in a business environment.&lt;/p&gt;
+&lt;h2 id="next-steps"&gt;Next Steps
+&lt;/h2&gt;&lt;p&gt;If I were to expand this project, I’d like to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Add more KPIs (like revenue by customer segment).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Build a forecasting model to predict future sales.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Try embedding the interactive dashboard into my website instead of just sharing images.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="conclusion"&gt;Conclusion
+&lt;/h2&gt;&lt;p&gt;This was my first end-to-end project in Power BI, and I’m really happy with how it turned out. It’s one thing to follow tutorials, but working with an actual dataset and creating visuals from scratch is the best way to learn.&lt;/p&gt;
+&lt;p&gt;If you’re just starting with Power BI, I highly recommend picking a dataset that interests you and giving it a try!&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://arnoldant.github.io/blog/p/building-my-first-sales-dashboard-in-power-bi/cover.png"
+width="1915"
+height="1076"
+srcset="https://arnoldant.github.io/blog/p/building-my-first-sales-dashboard-in-power-bi/cover_hu_adec19d7b678c4ba.png 480w, https://arnoldant.github.io/blog/p/building-my-first-sales-dashboard-in-power-bi/cover_hu_78c9862ea601d10d.png 1024w"
+loading="lazy"
+alt="AdventureWorks Bicycles Dashboard"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="427px"
+&gt;&lt;/p&gt;
+&lt;p&gt;SQL code used:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT TOP 1 People.FirstName, People.LastName, SalesTeam.SalesYTD
+FROM Sales.SalesPerson SalesTeam
+JOIN Person.Person People
+ON People.BusinessEntityID = SalesTeam.BusinessEntityID
+ORDER BY SalesTeam.SalesYTD DESC
+SELECT Year(OrderDate) SaleYear, MONTH(OrderDate) SaleMonth, SUM(TotalDue) TotalSales
+FROM Sales.SalesOrderHeader Header
+GROUP BY Year(OrderDate), MONTH(OrderDate)
+SELECT ProductTable.Name ProductName, OrderTable.ProductID, SUM(OrderQty) TotalUnitsSold
+FROM Sales.SalesOrderDetail OrderTable
+JOIN Production.Product ProductTable
+ON ProductTable.ProductID = OrderTable.ProductID
+JOIN Production.ProductSubcategory ProductSubCategory
+ON ProductTable.ProductSubcategoryID = ProductSubCategory.ProductSubcategoryID
+JOIN Production.ProductCategory ProductCategory
+ON ProductSubCategory.ProductCategoryID = ProductCategory.ProductCategoryID
+WHERE ProductCategory.Name = 'Bikes'
+GROUP BY OrderTable.ProductID, ProductTable.Name
+ORDER BY TotalUnitsSold DESC
+SELECT ProductSubcategory.Name SubCategoryName, SUM(OrderQty) TotalUnitsSold
+FROM Sales.SalesOrderDetail OrderTable
+JOIN Production.Product ProductTable
+ON ProductTable.ProductID = OrderTable.ProductID
+JOIN Production.ProductSubcategory ProductSubCategory
+ON ProductTable.ProductSubcategoryID = ProductSubCategory.ProductSubcategoryID
+WHERE ProductSubcategory.Name LIKE '%bike%'
+AND ProductSubcategory.Name NOT LIKE '%bike rack%'
+AND ProductSubcategory.Name NOT LIKE '%bike stand%'
+GROUP BY ProductSubcategory.Name
+ORDER BY TotalUnitsSold DESC
+SELECT st.Name AS TerritoryName, st.CountryRegionCode, SUM(soh.TotalDue) AS TotalSales
+FROM Sales.SalesOrderHeader soh
+JOIN Sales.SalesTerritory st
+ON soh.TerritoryID = st.TerritoryID
+GROUP BY st.Name, st.CountryRegionCode
+ORDER BY TotalSales DESC
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Data Cleaning/Visualization</title><link>https://arnoldant.github.io/blog/p/data-cleaning/visualization/</link><pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/data-cleaning/visualization/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/data-cleaning/visualization/cover.png" alt="Featured image of post Data Cleaning/Visualization" /&gt;&lt;p&gt;It’s been a while since I’ve worked on a personal project using Tableau and SQL, but I finally had a chance to dive back in with a dataset that caught my interest: Airbnb listings across New York City’s four major boroughs.&lt;/p&gt;
+&lt;p&gt;Using SQL to clean and explore the data, I built a Tableau dashboard to visualize key insights, including:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The number of listings per borough&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The highest and lowest Airbnb prices by borough&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The top 5 and lowest 5 rated listings based on star ratings&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;It was a great way to practice combining SQL and Tableau while uncovering interesting patterns in NYC’s short-term rental market. I’m excited to share the dashboard and insights from this project, and I look forward to continuing to explore real-world datasets in creative ways.&lt;/p&gt;
+&lt;p&gt;Software used: SQL, DuckDB, DBeaver, Tableau Desktop&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://public.tableau.com/views/AirbnbBorough/Dashboard1?:language=en-US&amp;amp;publish=yes&amp;amp;:sid=&amp;amp;:redirect=auth&amp;amp;:display_count=n&amp;amp;:origin=viz_share_link" target="_blank" rel="noopener"
+&gt;Airbnb Dashboard Tableau Public&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
