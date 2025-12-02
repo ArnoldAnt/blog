@@ -1,0 +1,1232 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content="Using VBA to Automate a Financial Allocation Process in Excel"><title>Automating Financial Processes in Excel</title><link rel=canonical href=https://arnoldant.github.io/blog/p/automating-financial-processes-in-excel/><link rel=stylesheet href=/blog/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css><meta property='og:title' content="Automating Financial Processes in Excel"><meta property='og:description' content="Using VBA to Automate a Financial Allocation Process in Excel"><meta property='og:url' content='https://arnoldant.github.io/blog/p/automating-financial-processes-in-excel/'><meta property='og:site_name' content='ArnoldAnt Blog'><meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='Excel'><meta property='article:tag' content='VBA'><meta property='article:tag' content='Automation'><meta property='article:published_time' content='2025-12-02T00:00:00+00:00'><meta property='article:modified_time' content='2025-12-02T00:00:00+00:00'><meta name=twitter:title content="Automating Financial Processes in Excel"><meta name=twitter:description content="Using VBA to Automate a Financial Allocation Process in Excel"><link rel="shortcut icon" href=/favicon.png></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=/blog/><img src=/blog/img/avatar_hu_9d0d045ed328e639.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</a><span class=emoji>👾</span></figure><div class=site-meta><h1 class=site-name><a href=/blog>ArnoldAnt Blog</a></h1><h2 class=site-description>A blog containing projects and things that I'm working on.</h2></div></header><ol class=menu-social><li><a href=https://github.com/ArnoldAnt target=_blank title=GitHub rel=me><svg class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li><li><a href=https://www.linkedin.com/in/anthony-arnold-696985253 target=_blank title=LinkedIn rel=me><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 10-4 0"/><path d="M3 7a4 4 0 014-4h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4z"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=/blog/><svg class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span></a></li><li><a href=/blog/archives/><svg class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span></a></li><li><a href=/blog/search/><svg class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span></a></li><li><a href=/blog/links/><svg class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg>
+<span>Links</span></a></li><li class=menu-bottom-section><ol class=menu><li id=dark-mode-toggle><svg class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span></li></ol></li></ol></aside><main class="main full-width"><article class=main-article><header class=article-header><div class=article-details><header class=article-category><a href=/blog/categories/projects/>Projects</a></header><div class=article-title-wrapper><h2 class=article-title><a href=/blog/p/automating-financial-processes-in-excel/>Automating Financial Processes in Excel</a></h2><h3 class=article-subtitle>Using VBA to Automate a Financial Allocation Process in Excel</h3></div><footer class=article-time><div><svg class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published datetime=2025-12-02T00:00:00Z>Dec 02, 2025</time></div><div><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>17 minute read</time></div></footer></div></header><section class=article-content><p>In payroll accounting, some tasks just feel like they’re built to test your patience. Payroll Accounting Adjustments (PAAs) are definitely one of them. Month after month, they require the same copy-paste routines, manual matching, and formatting gymnastics. While I personally didn’t have much trouble completing them, I noticed something important: my coworkers did.</p><p>Everyone had their own way of handling PAAs, and that inconsistency made the process slower, more error-prone, and incredibly frustrating for the team. Some people struggled with the volume of data, others with the formatting, and others with double-checking variances manually. Even with instructions, the sheer number of steps made it easy to miss something.</p><p>So I wondered: What if we didn’t have to do these steps manually at all?
+And that’s when I decided to automate the entire PAA workflow using VBA.</p><p>Below is the code I created to autoamte the allocation process. It was a challenging but worthwhile experience.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span><span class=lnt>165
+</span><span class=lnt>166
+</span><span class=lnt>167
+</span><span class=lnt>168
+</span><span class=lnt>169
+</span><span class=lnt>170
+</span><span class=lnt>171
+</span><span class=lnt>172
+</span><span class=lnt>173
+</span><span class=lnt>174
+</span><span class=lnt>175
+</span><span class=lnt>176
+</span><span class=lnt>177
+</span><span class=lnt>178
+</span><span class=lnt>179
+</span><span class=lnt>180
+</span><span class=lnt>181
+</span><span class=lnt>182
+</span><span class=lnt>183
+</span><span class=lnt>184
+</span><span class=lnt>185
+</span><span class=lnt>186
+</span><span class=lnt>187
+</span><span class=lnt>188
+</span><span class=lnt>189
+</span><span class=lnt>190
+</span><span class=lnt>191
+</span><span class=lnt>192
+</span><span class=lnt>193
+</span><span class=lnt>194
+</span><span class=lnt>195
+</span><span class=lnt>196
+</span><span class=lnt>197
+</span><span class=lnt>198
+</span><span class=lnt>199
+</span><span class=lnt>200
+</span><span class=lnt>201
+</span><span class=lnt>202
+</span><span class=lnt>203
+</span><span class=lnt>204
+</span><span class=lnt>205
+</span><span class=lnt>206
+</span><span class=lnt>207
+</span><span class=lnt>208
+</span><span class=lnt>209
+</span><span class=lnt>210
+</span><span class=lnt>211
+</span><span class=lnt>212
+</span><span class=lnt>213
+</span><span class=lnt>214
+</span><span class=lnt>215
+</span><span class=lnt>216
+</span><span class=lnt>217
+</span><span class=lnt>218
+</span><span class=lnt>219
+</span><span class=lnt>220
+</span><span class=lnt>221
+</span><span class=lnt>222
+</span><span class=lnt>223
+</span><span class=lnt>224
+</span><span class=lnt>225
+</span><span class=lnt>226
+</span><span class=lnt>227
+</span><span class=lnt>228
+</span><span class=lnt>229
+</span><span class=lnt>230
+</span><span class=lnt>231
+</span><span class=lnt>232
+</span><span class=lnt>233
+</span><span class=lnt>234
+</span><span class=lnt>235
+</span><span class=lnt>236
+</span><span class=lnt>237
+</span><span class=lnt>238
+</span><span class=lnt>239
+</span><span class=lnt>240
+</span><span class=lnt>241
+</span><span class=lnt>242
+</span><span class=lnt>243
+</span><span class=lnt>244
+</span><span class=lnt>245
+</span><span class=lnt>246
+</span><span class=lnt>247
+</span><span class=lnt>248
+</span><span class=lnt>249
+</span><span class=lnt>250
+</span><span class=lnt>251
+</span><span class=lnt>252
+</span><span class=lnt>253
+</span><span class=lnt>254
+</span><span class=lnt>255
+</span><span class=lnt>256
+</span><span class=lnt>257
+</span><span class=lnt>258
+</span><span class=lnt>259
+</span><span class=lnt>260
+</span><span class=lnt>261
+</span><span class=lnt>262
+</span><span class=lnt>263
+</span><span class=lnt>264
+</span><span class=lnt>265
+</span><span class=lnt>266
+</span><span class=lnt>267
+</span><span class=lnt>268
+</span><span class=lnt>269
+</span><span class=lnt>270
+</span><span class=lnt>271
+</span><span class=lnt>272
+</span><span class=lnt>273
+</span><span class=lnt>274
+</span><span class=lnt>275
+</span><span class=lnt>276
+</span><span class=lnt>277
+</span><span class=lnt>278
+</span><span class=lnt>279
+</span><span class=lnt>280
+</span><span class=lnt>281
+</span><span class=lnt>282
+</span><span class=lnt>283
+</span><span class=lnt>284
+</span><span class=lnt>285
+</span><span class=lnt>286
+</span><span class=lnt>287
+</span><span class=lnt>288
+</span><span class=lnt>289
+</span><span class=lnt>290
+</span><span class=lnt>291
+</span><span class=lnt>292
+</span><span class=lnt>293
+</span><span class=lnt>294
+</span><span class=lnt>295
+</span><span class=lnt>296
+</span><span class=lnt>297
+</span><span class=lnt>298
+</span><span class=lnt>299
+</span><span class=lnt>300
+</span><span class=lnt>301
+</span><span class=lnt>302
+</span><span class=lnt>303
+</span><span class=lnt>304
+</span><span class=lnt>305
+</span><span class=lnt>306
+</span><span class=lnt>307
+</span><span class=lnt>308
+</span><span class=lnt>309
+</span><span class=lnt>310
+</span><span class=lnt>311
+</span><span class=lnt>312
+</span><span class=lnt>313
+</span><span class=lnt>314
+</span><span class=lnt>315
+</span><span class=lnt>316
+</span><span class=lnt>317
+</span><span class=lnt>318
+</span><span class=lnt>319
+</span><span class=lnt>320
+</span><span class=lnt>321
+</span><span class=lnt>322
+</span><span class=lnt>323
+</span><span class=lnt>324
+</span><span class=lnt>325
+</span><span class=lnt>326
+</span><span class=lnt>327
+</span><span class=lnt>328
+</span><span class=lnt>329
+</span><span class=lnt>330
+</span><span class=lnt>331
+</span><span class=lnt>332
+</span><span class=lnt>333
+</span><span class=lnt>334
+</span><span class=lnt>335
+</span><span class=lnt>336
+</span><span class=lnt>337
+</span><span class=lnt>338
+</span><span class=lnt>339
+</span><span class=lnt>340
+</span><span class=lnt>341
+</span><span class=lnt>342
+</span><span class=lnt>343
+</span><span class=lnt>344
+</span><span class=lnt>345
+</span><span class=lnt>346
+</span><span class=lnt>347
+</span><span class=lnt>348
+</span><span class=lnt>349
+</span><span class=lnt>350
+</span><span class=lnt>351
+</span><span class=lnt>352
+</span><span class=lnt>353
+</span><span class=lnt>354
+</span><span class=lnt>355
+</span><span class=lnt>356
+</span><span class=lnt>357
+</span><span class=lnt>358
+</span><span class=lnt>359
+</span><span class=lnt>360
+</span><span class=lnt>361
+</span><span class=lnt>362
+</span><span class=lnt>363
+</span><span class=lnt>364
+</span><span class=lnt>365
+</span><span class=lnt>366
+</span><span class=lnt>367
+</span><span class=lnt>368
+</span><span class=lnt>369
+</span><span class=lnt>370
+</span><span class=lnt>371
+</span><span class=lnt>372
+</span><span class=lnt>373
+</span><span class=lnt>374
+</span><span class=lnt>375
+</span><span class=lnt>376
+</span><span class=lnt>377
+</span><span class=lnt>378
+</span><span class=lnt>379
+</span><span class=lnt>380
+</span><span class=lnt>381
+</span><span class=lnt>382
+</span><span class=lnt>383
+</span><span class=lnt>384
+</span><span class=lnt>385
+</span><span class=lnt>386
+</span><span class=lnt>387
+</span><span class=lnt>388
+</span><span class=lnt>389
+</span><span class=lnt>390
+</span><span class=lnt>391
+</span><span class=lnt>392
+</span><span class=lnt>393
+</span><span class=lnt>394
+</span><span class=lnt>395
+</span><span class=lnt>396
+</span><span class=lnt>397
+</span><span class=lnt>398
+</span><span class=lnt>399
+</span><span class=lnt>400
+</span><span class=lnt>401
+</span><span class=lnt>402
+</span><span class=lnt>403
+</span><span class=lnt>404
+</span><span class=lnt>405
+</span><span class=lnt>406
+</span><span class=lnt>407
+</span><span class=lnt>408
+</span><span class=lnt>409
+</span><span class=lnt>410
+</span><span class=lnt>411
+</span><span class=lnt>412
+</span><span class=lnt>413
+</span><span class=lnt>414
+</span><span class=lnt>415
+</span><span class=lnt>416
+</span><span class=lnt>417
+</span><span class=lnt>418
+</span><span class=lnt>419
+</span><span class=lnt>420
+</span><span class=lnt>421
+</span><span class=lnt>422
+</span><span class=lnt>423
+</span><span class=lnt>424
+</span><span class=lnt>425
+</span><span class=lnt>426
+</span><span class=lnt>427
+</span><span class=lnt>428
+</span><span class=lnt>429
+</span><span class=lnt>430
+</span><span class=lnt>431
+</span><span class=lnt>432
+</span><span class=lnt>433
+</span><span class=lnt>434
+</span><span class=lnt>435
+</span><span class=lnt>436
+</span><span class=lnt>437
+</span><span class=lnt>438
+</span><span class=lnt>439
+</span><span class=lnt>440
+</span><span class=lnt>441
+</span><span class=lnt>442
+</span><span class=lnt>443
+</span><span class=lnt>444
+</span><span class=lnt>445
+</span><span class=lnt>446
+</span><span class=lnt>447
+</span><span class=lnt>448
+</span><span class=lnt>449
+</span><span class=lnt>450
+</span><span class=lnt>451
+</span><span class=lnt>452
+</span><span class=lnt>453
+</span><span class=lnt>454
+</span><span class=lnt>455
+</span><span class=lnt>456
+</span><span class=lnt>457
+</span><span class=lnt>458
+</span><span class=lnt>459
+</span><span class=lnt>460
+</span><span class=lnt>461
+</span><span class=lnt>462
+</span><span class=lnt>463
+</span><span class=lnt>464
+</span><span class=lnt>465
+</span><span class=lnt>466
+</span><span class=lnt>467
+</span><span class=lnt>468
+</span><span class=lnt>469
+</span><span class=lnt>470
+</span><span class=lnt>471
+</span><span class=lnt>472
+</span><span class=lnt>473
+</span><span class=lnt>474
+</span><span class=lnt>475
+</span><span class=lnt>476
+</span><span class=lnt>477
+</span><span class=lnt>478
+</span><span class=lnt>479
+</span><span class=lnt>480
+</span><span class=lnt>481
+</span><span class=lnt>482
+</span><span class=lnt>483
+</span><span class=lnt>484
+</span><span class=lnt>485
+</span><span class=lnt>486
+</span><span class=lnt>487
+</span><span class=lnt>488
+</span><span class=lnt>489
+</span><span class=lnt>490
+</span><span class=lnt>491
+</span><span class=lnt>492
+</span><span class=lnt>493
+</span><span class=lnt>494
+</span><span class=lnt>495
+</span><span class=lnt>496
+</span><span class=lnt>497
+</span><span class=lnt>498
+</span><span class=lnt>499
+</span><span class=lnt>500
+</span><span class=lnt>501
+</span><span class=lnt>502
+</span><span class=lnt>503
+</span><span class=lnt>504
+</span><span class=lnt>505
+</span><span class=lnt>506
+</span><span class=lnt>507
+</span><span class=lnt>508
+</span><span class=lnt>509
+</span><span class=lnt>510
+</span><span class=lnt>511
+</span><span class=lnt>512
+</span><span class=lnt>513
+</span><span class=lnt>514
+</span><span class=lnt>515
+</span><span class=lnt>516
+</span><span class=lnt>517
+</span><span class=lnt>518
+</span><span class=lnt>519
+</span><span class=lnt>520
+</span><span class=lnt>521
+</span><span class=lnt>522
+</span><span class=lnt>523
+</span><span class=lnt>524
+</span><span class=lnt>525
+</span><span class=lnt>526
+</span><span class=lnt>527
+</span><span class=lnt>528
+</span><span class=lnt>529
+</span><span class=lnt>530
+</span><span class=lnt>531
+</span><span class=lnt>532
+</span><span class=lnt>533
+</span><span class=lnt>534
+</span><span class=lnt>535
+</span><span class=lnt>536
+</span><span class=lnt>537
+</span><span class=lnt>538
+</span><span class=lnt>539
+</span><span class=lnt>540
+</span><span class=lnt>541
+</span><span class=lnt>542
+</span><span class=lnt>543
+</span><span class=lnt>544
+</span><span class=lnt>545
+</span><span class=lnt>546
+</span><span class=lnt>547
+</span><span class=lnt>548
+</span><span class=lnt>549
+</span><span class=lnt>550
+</span><span class=lnt>551
+</span><span class=lnt>552
+</span><span class=lnt>553
+</span><span class=lnt>554
+</span><span class=lnt>555
+</span><span class=lnt>556
+</span><span class=lnt>557
+</span><span class=lnt>558
+</span><span class=lnt>559
+</span><span class=lnt>560
+</span><span class=lnt>561
+</span><span class=lnt>562
+</span><span class=lnt>563
+</span><span class=lnt>564
+</span><span class=lnt>565
+</span><span class=lnt>566
+</span><span class=lnt>567
+</span><span class=lnt>568
+</span><span class=lnt>569
+</span><span class=lnt>570
+</span><span class=lnt>571
+</span><span class=lnt>572
+</span><span class=lnt>573
+</span><span class=lnt>574
+</span><span class=lnt>575
+</span><span class=lnt>576
+</span><span class=lnt>577
+</span><span class=lnt>578
+</span><span class=lnt>579
+</span><span class=lnt>580
+</span><span class=lnt>581
+</span><span class=lnt>582
+</span><span class=lnt>583
+</span><span class=lnt>584
+</span><span class=lnt>585
+</span><span class=lnt>586
+</span><span class=lnt>587
+</span><span class=lnt>588
+</span><span class=lnt>589
+</span><span class=lnt>590
+</span><span class=lnt>591
+</span><span class=lnt>592
+</span><span class=lnt>593
+</span><span class=lnt>594
+</span><span class=lnt>595
+</span><span class=lnt>596
+</span><span class=lnt>597
+</span><span class=lnt>598
+</span><span class=lnt>599
+</span><span class=lnt>600
+</span><span class=lnt>601
+</span><span class=lnt>602
+</span><span class=lnt>603
+</span><span class=lnt>604
+</span><span class=lnt>605
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-diff data-lang=diff><span class=line><span class=cl>Sub DeleteMonthlyTabs()
+</span></span><span class=line><span class=cl>    Dim monthNames As Variant
+</span></span><span class=line><span class=cl>    Dim ws As Worksheet
+</span></span><span class=line><span class=cl>    Dim monthName As Variant
+</span></span><span class=line><span class=cl>    Dim wsFound As Boolean
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39; List of month names from June to May
+</span></span><span class=line><span class=cl>    monthNames = Array(&#34;June&#34;, &#34;July&#34;, &#34;August&#34;, &#34;September&#34;, &#34;October&#34;, _
+</span></span><span class=line><span class=cl>                       &#34;November&#34;, &#34;December&#34;, &#34;January&#34;, &#34;February&#34;, _
+</span></span><span class=line><span class=cl>                       &#34;March&#34;, &#34;April&#34;, &#34;May&#34;)
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39; Loop through each month name
+</span></span><span class=line><span class=cl>    For Each monthName In monthNames
+</span></span><span class=line><span class=cl>        On Error Resume Next
+</span></span><span class=line><span class=cl>        &#39; Attempt to set the worksheet object
+</span></span><span class=line><span class=cl>        Set ws = ThisWorkbook.Sheets(monthName)
+</span></span><span class=line><span class=cl>        On Error GoTo 0
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        &#39; If the worksheet exists, delete it
+</span></span><span class=line><span class=cl>        If Not ws Is Nothing Then
+</span></span><span class=line><span class=cl>            Application.DisplayAlerts = False &#39; Disable delete confirmation
+</span></span><span class=line><span class=cl>            ws.Delete
+</span></span><span class=line><span class=cl>            Application.DisplayAlerts = True &#39; Re-enable delete confirmation
+</span></span><span class=line><span class=cl>            Set ws = Nothing &#39; Reset the worksheet object
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>    Next monthName
+</span></span><span class=line><span class=cl>End Sub
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Sub CombinedFromTo()
+</span></span><span class=line><span class=cl>    &#39; invoke previous sub first to clear already created sheets before generating
+</span></span><span class=line><span class=cl>    DeleteMonthlyTabs
+</span></span><span class=line><span class=cl>    RefreshData
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Dim selectedMonths As Collection
+</span></span><span class=line><span class=cl>    Dim wsFactors As Worksheet, wsMonthlySplit As Worksheet, wsNew As Worksheet, wsToTest As Worksheet, wsCOA As Worksheet
+</span></span><span class=line><span class=cl>    Dim tblSalaryDetail As ListObject, wdTable As ListObject
+</span></span><span class=line><span class=cl>    Dim tblEmployeeComp As ListObject
+</span></span><span class=line><span class=cl>    Dim row As ListRow
+</span></span><span class=line><span class=cl>    Dim journalPeriod As String, journalPeriodTo As String
+</span></span><span class=line><span class=cl>    Dim positionID As String
+</span></span><span class=line><span class=cl>    Dim payComponent As String
+</span></span><span class=line><span class=cl>    Dim valueToSum As Double
+</span></span><span class=line><span class=cl>    Dim tiedKey As Variant
+</span></span><span class=line><span class=cl>    Dim basePayTotal As Double, sickTotal As Double, vacationTotal As Double
+</span></span><span class=line><span class=cl>    Dim holidayTotal As Double, floatingHolidayTotal As Double, adminLeaveTotal As Double
+</span></span><span class=line><span class=cl>    Dim monthName As Variant
+</span></span><span class=line><span class=cl>    Dim monthStart As Date, monthEnd As Date
+</span></span><span class=line><span class=cl>    Dim tiedKeyRow As Long, payComponentRow As Long
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39; Variables used for populating TO data
+</span></span><span class=line><span class=cl>    Dim matchCol As Long
+</span></span><span class=line><span class=cl>    Dim matchRow As Long
+</span></span><span class=line><span class=cl>    Dim toTestRow As Long
+</span></span><span class=line><span class=cl>    Dim percentageValue As Variant
+</span></span><span class=line><span class=cl>    Dim cumulativeTotal As Double
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39; Variables used for tracking Annual Pay changes
+</span></span><span class=line><span class=cl>    Dim rng As Range
+</span></span><span class=line><span class=cl>    Dim effectiveDate As Date
+</span></span><span class=line><span class=cl>    Dim lastValue As Variant
+</span></span><span class=line><span class=cl>    Dim changeCount As Integer
+</span></span><span class=line><span class=cl>    Dim dateChanges() As Date
+</span></span><span class=line><span class=cl>    Dim idx As Integer
+</span></span><span class=line><span class=cl>    Dim basePayProposedArr() As Double
+</span></span><span class=line><span class=cl>    Dim mostRecentEffectiveDateBeforeJune As Date
+</span></span><span class=line><span class=cl>    Dim mostRecentBasePayProposedBeforeJune As Double
+</span></span><span class=line><span class=cl>    Dim lastEntryFoundBeforeJune As Boolean
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39;Capture today&#39;s date and the fiscal year
+</span></span><span class=line><span class=cl>    Dim tdDate As Date
+</span></span><span class=line><span class=cl>    Dim fYear As Long
+</span></span><span class=line><span class=cl>    tdDate = Date
+</span></span><span class=line><span class=cl>    Debug.Print (tdDate)
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    If tdDate &gt; &#34;5/31/&#34; &amp; Year(tdDate) Then
+</span></span><span class=line><span class=cl>        fYear = Year(tdDate) + 1
+</span></span><span class=line><span class=cl>    Else
+</span></span><span class=line><span class=cl>        fYear = Year(tdDate)
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39; Grab projections input from this sheet
+</span></span><span class=line><span class=cl>    Set wsToTest = ThisWorkbook.Worksheets(&#34;PS_Copy&#34;)
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39; COA: Grab COA sheet
+</span></span><span class=line><span class=cl>    Set wsCOA = ThisWorkbook.Worksheets(&#34;Master&#34;)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Initialize collection for selected months
+</span></span><span class=line><span class=cl>    Set selectedMonths = New Collection
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Show the custom user form to select months and retrieve positionID
+</span></span><span class=line><span class=cl>    UserForm_MonthSelector.Show
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39; Get the Position ID value from the TextBox on the UserForm
+</span></span><span class=line><span class=cl>    positionID = wsToTest.Range(&#34;H8&#34;).Value &#39; UserForm_MonthSelector.tb_PosID.Value
+</span></span><span class=line><span class=cl>    If positionID = &#34;&#34; Then
+</span></span><span class=line><span class=cl>        MsgBox &#34;No Position ID provided. Macro will now exit.&#34;, vbExclamation, &#34;Missing Input&#34;
+</span></span><span class=line><span class=cl>        Exit Sub
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Add selected months to the collection based on the checkboxes in the UserForm - generate in FY order
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_June.Value Then selectedMonths.Add &#34;June&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_July.Value Then selectedMonths.Add &#34;July&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_August.Value Then selectedMonths.Add &#34;August&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_September.Value Then selectedMonths.Add &#34;September&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_October.Value Then selectedMonths.Add &#34;October&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_November.Value Then selectedMonths.Add &#34;November&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_December.Value Then selectedMonths.Add &#34;December&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_January.Value Then selectedMonths.Add &#34;January&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_February.Value Then selectedMonths.Add &#34;February&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_March.Value Then selectedMonths.Add &#34;March&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_April.Value Then selectedMonths.Add &#34;April&#34;
+</span></span><span class=line><span class=cl>    If UserForm_MonthSelector.cb_May.Value Then selectedMonths.Add &#34;May&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Check if at least one month is selected
+</span></span><span class=line><span class=cl>    If selectedMonths.Count = 0 Then
+</span></span><span class=line><span class=cl>        MsgBox &#34;No months were selected. Macro will now exit.&#34;, vbExclamation, &#34;No Selection&#34;
+</span></span><span class=line><span class=cl>        Exit Sub
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Reference the &#34;Monthly_Split&#34; tab
+</span></span><span class=line><span class=cl>    On Error Resume Next
+</span></span><span class=line><span class=cl>    Set wsMonthlySplit = ThisWorkbook.Sheets(CStr(UserForm_MonthSelector.tb_wp.Value) &amp; &#34;_Split&#34;)
+</span></span><span class=line><span class=cl>    On Error GoTo 0
+</span></span><span class=line><span class=cl>    If wsMonthlySplit Is Nothing Then
+</span></span><span class=line><span class=cl>        MsgBox &#34;Sheet &#39;Monthly_Split&#39; does not exist in this workbook.&#34;, vbCritical, &#34;Error&#34;
+</span></span><span class=line><span class=cl>        Exit Sub
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Reference the &#34;Factors&#34; tab
+</span></span><span class=line><span class=cl>    On Error Resume Next
+</span></span><span class=line><span class=cl>    Set wsFactors = ThisWorkbook.Sheets(&#34;Factors&#34;)
+</span></span><span class=line><span class=cl>    On Error GoTo 0
+</span></span><span class=line><span class=cl>    If wsFactors Is Nothing Then
+</span></span><span class=line><span class=cl>        MsgBox &#34;The &#39;Factors&#39; tab could not be found.&#34;, vbCritical, &#34;Error&#34;
+</span></span><span class=line><span class=cl>        Exit Sub
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Reference the WD_SALARYDETAIL table on the Factors sheet
+</span></span><span class=line><span class=cl>    On Error Resume Next
+</span></span><span class=line><span class=cl>    Set wdTable = wsFactors.ListObjects(&#34;WD_SALARYDETAIL&#34;)
+</span></span><span class=line><span class=cl>    On Error GoTo 0
+</span></span><span class=line><span class=cl>    If wdTable Is Nothing Then
+</span></span><span class=line><span class=cl>        MsgBox &#34;The &#39;WD_SALARYDETAIL&#39; table could not be found on the &#39;Factors&#39; sheet.&#34;, vbCritical, &#34;Error&#34;
+</span></span><span class=line><span class=cl>        Exit Sub
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Reference the Employee_Comp table on the AnnualPay sheet
+</span></span><span class=line><span class=cl>    On Error Resume Next
+</span></span><span class=line><span class=cl>    Set tblEmployeeComp = ThisWorkbook.Sheets(&#34;AnnualPay&#34;).ListObjects(&#34;Employee_Comp&#34;)
+</span></span><span class=line><span class=cl>    On Error GoTo 0
+</span></span><span class=line><span class=cl>    If tblEmployeeComp Is Nothing Then
+</span></span><span class=line><span class=cl>        MsgBox &#34;The &#39;Employee_Comp&#39; table could not be found on the &#39;AnnualPay&#39; sheet.&#34;, vbCritical, &#34;Error&#34;
+</span></span><span class=line><span class=cl>        Exit Sub
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Retrieve EmployeeID, EmployeeName, Pay Effective Date, and BasePayProposed using the Position ID
+</span></span><span class=line><span class=cl>    Dim colPosID As Long, colWorker As Long, colPayEffDate As Long, colBasePayProposed As Long, EmployeeID As String, EmployeeName As String, BasePayProposed As Double
+</span></span><span class=line><span class=cl>    colPosID = tblEmployeeComp.ListColumns(&#34;PosID&#34;).Index
+</span></span><span class=line><span class=cl>    colWorker = tblEmployeeComp.ListColumns(&#34;Worker&#34;).Index
+</span></span><span class=line><span class=cl>    colPayEffDate = tblEmployeeComp.ListColumns(&#34;Effective Date&#34;).Index
+</span></span><span class=line><span class=cl>    colBasePayProposed = tblEmployeeComp.ListColumns(&#34;Base Pay - Proposed&#34;).Index
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; What to do if error when getting information.
+</span></span><span class=line><span class=cl>    On Error Resume Next
+</span></span><span class=line><span class=cl>    Dim FoundRow As ListRow
+</span></span><span class=line><span class=cl>    Set FoundRow = tblEmployeeComp.ListRows(WorksheetFunction.Match(positionID, tblEmployeeComp.ListColumns(colPosID).DataBodyRange, 0))
+</span></span><span class=line><span class=cl>    On Error GoTo 0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    If FoundRow Is Nothing Then
+</span></span><span class=line><span class=cl>        MsgBox &#34;The Position ID was not found in the Employee_Comp table.&#34;, vbExclamation, &#34;Error&#34;
+</span></span><span class=line><span class=cl>        Exit Sub
+</span></span><span class=line><span class=cl>    Else
+</span></span><span class=line><span class=cl>    EmployeeID = FoundRow.Range.Cells(1, tblEmployeeComp.ListColumns(&#34;Employee ID&#34;).Index).Value
+</span></span><span class=line><span class=cl>    EmployeeName = FoundRow.Range.Cells(1, colWorker).Value
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    &#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;
+</span></span><span class=line><span class=cl>    &#39; tracking annual pay changes
+</span></span><span class=line><span class=cl>    &#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;
+</span></span><span class=line><span class=cl>    &#39; Find matching rows for Position ID
+</span></span><span class=line><span class=cl>    Dim posColumn As Range, effDateColumn As Range, basePayCurrentCol As Range, basePayProposedCol As Range
+</span></span><span class=line><span class=cl>    Set posColumn = tblEmployeeComp.ListColumns(&#34;PosID&#34;).DataBodyRange
+</span></span><span class=line><span class=cl>    Set effDateColumn = tblEmployeeComp.ListColumns(&#34;Effective Date&#34;).DataBodyRange
+</span></span><span class=line><span class=cl>    Set basePayProposedCol = tblEmployeeComp.ListColumns(&#34;Base Pay - Proposed&#34;).DataBodyRange
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>    changeCount = 0
+</span></span><span class=line><span class=cl>    lastValue = &#34;&#34;
+</span></span><span class=line><span class=cl>    idx = 0
+</span></span><span class=line><span class=cl>    lastEntryFoundBeforeJune = False
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>    &#39; Loop through rows
+</span></span><span class=line><span class=cl>    For Each rng In posColumn
+</span></span><span class=line><span class=cl>        If CStr(rng.Value) = CStr(positionID) Then
+</span></span><span class=line><span class=cl>            effectiveDate = rng.Offset(0, effDateColumn.Column - posColumn.Column).Value
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            &#39; Capture most recent effective date before June 1, 2025 [FY HARDCODED]
+</span></span><span class=line><span class=cl>            &#39; adjust so that an entry isn&#39;t missed like for P00005148 if effective date is right on 6/1/2025
+</span></span><span class=line><span class=cl>&#39;            If effectiveDate &lt; DateSerial(2025, 6, 1) Then
+</span></span><span class=line><span class=cl>            If effectiveDate &lt;= DateSerial(fYear - 1, 6, 1) Then
+</span></span><span class=line><span class=cl>                If Not lastEntryFoundBeforeJune Or effectiveDate &gt; mostRecentEffectiveDateBeforeJune Then
+</span></span><span class=line><span class=cl>                    mostRecentEffectiveDateBeforeJune = effectiveDate
+</span></span><span class=line><span class=cl>                    mostRecentBasePayProposedBeforeJune = rng.Offset(0, basePayProposedCol.Column - posColumn.Column).Value
+</span></span><span class=line><span class=cl>                    lastEntryFoundBeforeJune = True
+</span></span><span class=line><span class=cl>                End If
+</span></span><span class=line><span class=cl>            End If
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            &#39; Track changes in effective date and only store values for current FY [FY HARDCODED]
+</span></span><span class=line><span class=cl>            If effectiveDate &gt; DateSerial(fYear - 1, 5, 31) And effectiveDate &lt;&gt; lastValue Then
+</span></span><span class=line><span class=cl>                changeCount = changeCount + 1
+</span></span><span class=line><span class=cl>                lastValue = effectiveDate
+</span></span><span class=line><span class=cl>                
+</span></span><span class=line><span class=cl>                &#39; Store date change
+</span></span><span class=line><span class=cl>                ReDim Preserve dateChanges(idx)
+</span></span><span class=line><span class=cl>                dateChanges(idx) = effectiveDate
+</span></span><span class=line><span class=cl>                
+</span></span><span class=line><span class=cl>                &#39; Store corresponding pay values
+</span></span><span class=line><span class=cl>                ReDim Preserve basePayProposedArr(idx)
+</span></span><span class=line><span class=cl>                basePayProposedArr(idx) = rng.Offset(0, basePayProposedCol.Column - posColumn.Column).Value
+</span></span><span class=line><span class=cl>                
+</span></span><span class=line><span class=cl>                idx = idx + 1
+</span></span><span class=line><span class=cl>            End If
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>    Next rng
+</span></span><span class=line><span class=cl>    &#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;
+</span></span><span class=line><span class=cl>    &#39; initial values
+</span></span><span class=line><span class=cl>    Dim z: z = UBound(dateChanges) - LBound(dateChanges) &#39;start with most dated values in arrays
+</span></span><span class=line><span class=cl>    BasePayProposed = mostRecentBasePayProposedBeforeJune &#39;starting salary before comencement of FY [outside of array]
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; [HARDCODED] Change for next fiscal year.
+</span></span><span class=line><span class=cl>    &#39; Process each selected month
+</span></span><span class=line><span class=cl>    For Each monthName In selectedMonths
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        &#39; Define month start and end dates
+</span></span><span class=line><span class=cl>        Select Case monthName
+</span></span><span class=line><span class=cl>            Case &#34;June&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear - 1, 6, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear - 1, 6, 30)
+</span></span><span class=line><span class=cl>            Case &#34;July&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear - 1, 7, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear - 1, 7, 31)
+</span></span><span class=line><span class=cl>            Case &#34;August&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear - 1, 8, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear - 1, 8, 31)
+</span></span><span class=line><span class=cl>            Case &#34;September&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear - 1, 9, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear - 1, 9, 30)
+</span></span><span class=line><span class=cl>            Case &#34;October&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear - 1, 10, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear - 1, 10, 31)
+</span></span><span class=line><span class=cl>            Case &#34;November&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear - 1, 11, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear - 1, 11, 30)
+</span></span><span class=line><span class=cl>            Case &#34;December&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear - 1, 12, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear - 1, 12, 31)
+</span></span><span class=line><span class=cl>            Case &#34;January&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear, 1, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear, 1, 31)
+</span></span><span class=line><span class=cl>            Case &#34;February&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear, 2, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear, 2, 28)
+</span></span><span class=line><span class=cl>            Case &#34;March&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear, 3, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear, 3, 31)
+</span></span><span class=line><span class=cl>            Case &#34;April&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear, 4, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear, 4, 30)
+</span></span><span class=line><span class=cl>            Case &#34;May&#34;
+</span></span><span class=line><span class=cl>                monthStart = DateSerial(fYear, 5, 1)
+</span></span><span class=line><span class=cl>                monthEnd = DateSerial(fYear, 5, 31)
+</span></span><span class=line><span class=cl>        End Select
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        &#39; Duplicate the &#34;Monthly_Split&#34; tab and rename it
+</span></span><span class=line><span class=cl>        wsMonthlySplit.Copy After:=ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count)
+</span></span><span class=line><span class=cl>        Set wsNew = ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count)
+</span></span><span class=line><span class=cl>        wsNew.Name = monthName
+</span></span><span class=line><span class=cl>        wsNew.Tab.Color = RGB(144, 238, 144)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        &#39; Place start and end dates into cells G9 and H9
+</span></span><span class=line><span class=cl>        With wsNew
+</span></span><span class=line><span class=cl>            .Range(&#34;G9&#34;).Value = monthStart
+</span></span><span class=line><span class=cl>            .Range(&#34;H9&#34;).Value = monthEnd
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            &#39; Populate EmployeeID, EmployeeName, and BasePayProposed into respective cells
+</span></span><span class=line><span class=cl>            .Range(&#34;H1&#34;).Value = EmployeeID
+</span></span><span class=line><span class=cl>            .Range(&#34;H2&#34;).Value = EmployeeName
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            &#39; fixed below so that it is based on the Salary during that (monthly) period in FY25 instead of grabbing most recent
+</span></span><span class=line><span class=cl>            If monthStart = dateChanges(z) Then
+</span></span><span class=line><span class=cl>                BasePayProposed = basePayProposedArr(z)
+</span></span><span class=line><span class=cl>                If z &gt; 0 Then
+</span></span><span class=line><span class=cl>                    z = z - 1 &#39;only decrement to the most recent entry if within array bounds
+</span></span><span class=line><span class=cl>                End If
+</span></span><span class=line><span class=cl>            End If
+</span></span><span class=line><span class=cl>            .Range(&#34;H5&#34;).Value = BasePayProposed
+</span></span><span class=line><span class=cl>        End With
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        &#39; Initialize starting rows
+</span></span><span class=line><span class=cl>        tiedKeyRow = 18
+</span></span><span class=line><span class=cl>        payComponentRow = 19
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        &#39; Reset totals
+</span></span><span class=line><span class=cl>        basePayTotal = 0
+</span></span><span class=line><span class=cl>        sickTotal = 0
+</span></span><span class=line><span class=cl>        vacationTotal = 0
+</span></span><span class=line><span class=cl>        holidayTotal = 0
+</span></span><span class=line><span class=cl>        floatingHolidayTotal = 0
+</span></span><span class=line><span class=cl>        adminLeaveTotal = 0
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        &#39; Fixed row loop so that the same Worktag is not repeated and corressponding components are properly grouped and summed
+</span></span><span class=line><span class=cl>        Dim processedTiedKeys As Collection
+</span></span><span class=line><span class=cl>        Set processedTiedKeys = New Collection &#39; To track already processed tied keys
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        For Each row In wdTable.ListRows
+</span></span><span class=line><span class=cl>            If row.Range(1, wdTable.ListColumns(&#34;Journal Line Position ID&#34;).Index).Value = positionID And _
+</span></span><span class=line><span class=cl>               row.Range(1, wdTable.ListColumns(&#34;Journal Source&#34;).Index).Value = &#34;Payroll Actual Accrual&#34; Then
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                journalPeriod = row.Range(1, wdTable.ListColumns(&#34;Journal Period&#34;).Index).Value &#39; Get Journal Period
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                &#39; Process only rows matching the current month
+</span></span><span class=line><span class=cl>                If journalPeriod = Left(monthName, 3) Then
+</span></span><span class=line><span class=cl>                    payComponent = row.Range(1, wdTable.ListColumns(&#34;Pay Component&#34;).Index).Value &#39; Get Pay Component
+</span></span><span class=line><span class=cl>                    valueToSum = row.Range(1, wdTable.ListColumns(&#34;Transaction Amount&#34;).Index).Value &#39; Get the value for the row
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                    &#39; Capture the tied key (Program, Grant, or Gift)
+</span></span><span class=line><span class=cl>                    If row.Range(1, wdTable.ListColumns(&#34;Program&#34;).Index).Value &lt;&gt; &#34;&#34; Then
+</span></span><span class=line><span class=cl>                        tiedKey = Split(row.Range(1, wdTable.ListColumns(&#34;Program&#34;).Index).Value, &#34; &#34;)(0)
+</span></span><span class=line><span class=cl>                    ElseIf row.Range(1, wdTable.ListColumns(&#34;Grant&#34;).Index).Value &lt;&gt; &#34;&#34; Then
+</span></span><span class=line><span class=cl>                        tiedKey = Split(row.Range(1, wdTable.ListColumns(&#34;Grant&#34;).Index).Value, &#34; &#34;)(0)
+</span></span><span class=line><span class=cl>                    ElseIf row.Range(1, wdTable.ListColumns(&#34;Gift&#34;).Index).Value &lt;&gt; &#34;&#34; Then
+</span></span><span class=line><span class=cl>                        tiedKey = Split(row.Range(1, wdTable.ListColumns(&#34;Gift&#34;).Index).Value, &#34; &#34;)(0)
+</span></span><span class=line><span class=cl>                    Else
+</span></span><span class=line><span class=cl>                        tiedKey = &#34;Undefined&#34;
+</span></span><span class=line><span class=cl>                    End If
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                    &#39; Check if the tied key has already been processed
+</span></span><span class=line><span class=cl>                    Dim keyExists As Boolean
+</span></span><span class=line><span class=cl>                    keyExists = False
+</span></span><span class=line><span class=cl>                    On Error Resume Next
+</span></span><span class=line><span class=cl>                    keyExists = Not IsError(processedTiedKeys(tiedKey))
+</span></span><span class=line><span class=cl>                    On Error GoTo 0
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                    If Not keyExists Then
+</span></span><span class=line><span class=cl>                        &#39; Add the tied key to the collection to mark it as processed
+</span></span><span class=line><span class=cl>                        processedTiedKeys.Add tiedKey, tiedKey
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                        &#39; Initialize totals for this tied key
+</span></span><span class=line><span class=cl>                        basePayTotal = 0
+</span></span><span class=line><span class=cl>                        sickTotal = 0
+</span></span><span class=line><span class=cl>                        vacationTotal = 0
+</span></span><span class=line><span class=cl>                        holidayTotal = 0
+</span></span><span class=line><span class=cl>                        floatingHolidayTotal = 0
+</span></span><span class=line><span class=cl>                        adminLeaveTotal = 0
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                        &#39; Nested loop to process all rows corresponding to this tied key
+</span></span><span class=line><span class=cl>                        For Each subRow In wdTable.ListRows
+</span></span><span class=line><span class=cl>                            If subRow.Range(1, wdTable.ListColumns(&#34;Journal Line Position ID&#34;).Index).Value = positionID And _
+</span></span><span class=line><span class=cl>                                subRow.Range(1, wdTable.ListColumns(&#34;Journal Source&#34;).Index).Value = &#34;Payroll Actual Accrual&#34; And _
+</span></span><span class=line><span class=cl>                                ((subRow.Range(1, wdTable.ListColumns(&#34;Program&#34;).Index).Value Like tiedKey &amp; &#34;*&#34;) Or _
+</span></span><span class=line><span class=cl>                                (subRow.Range(1, wdTable.ListColumns(&#34;Grant&#34;).Index).Value Like tiedKey &amp; &#34;*&#34;) Or _
+</span></span><span class=line><span class=cl>                                (subRow.Range(1, wdTable.ListColumns(&#34;Gift&#34;).Index).Value Like tiedKey &amp; &#34;*&#34;)) Then
+</span></span><span class=line><span class=cl>                                
+</span></span><span class=line><span class=cl>                                subJournalPeriod = subRow.Range(1, wdTable.ListColumns(&#34;Journal Period&#34;).Index).Value &#39; Get Journal Period
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                                &#39; Process only rows matching the current month
+</span></span><span class=line><span class=cl>                                If subJournalPeriod = Left(monthName, 3) Then
+</span></span><span class=line><span class=cl>                                    subPayComponent = subRow.Range(1, wdTable.ListColumns(&#34;Pay Component&#34;).Index).Value &#39; Get Pay Component
+</span></span><span class=line><span class=cl>                                    subValueToSum = subRow.Range(1, wdTable.ListColumns(&#34;Transaction Amount&#34;).Index).Value &#39; Get the value for the row
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                                    &#39; Add value to the appropriate total
+</span></span><span class=line><span class=cl>                                    &#39; TODO: Bring in remaining components and add to the appropriate category below
+</span></span><span class=line><span class=cl>                                    Select Case subPayComponent
+</span></span><span class=line><span class=cl>                                        Case &#34;Admin Leave&#34;
+</span></span><span class=line><span class=cl>                                            adminLeaveTotal = adminLeaveTotal + subValueToSum
+</span></span><span class=line><span class=cl>                                        &#39; TODO: modify PQ to filter Activity Pay by SC (**since not all AP&#39;s go to Base**)
+</span></span><span class=line><span class=cl>                                        Case &#34;Activity Pay (Not Reported)&#34;, &#34;Activity Pay (Reported)&#34;, &#34;Base- ACP&#34;, &#34;Base Pay&#34;, &#34;Disaster Double Time Pay&#34;, &#34;Disaster Pay&#34;, &#34;Education&#34;, &#34;FWS- Academic Year&#34;, &#34;FWS- Overflow (Summer-1)&#34;, &#34;FWS- Summer1&#34;, &#34;FWS- Summer2&#34;, &#34;Parental Leave&#34;, &#34;Regular&#34;, &#34;Retro (Hourly)&#34;, &#34;Sea Pay&#34;, &#34;Severance (onetime)&#34;, &#34;Shift  Diff 10%&#34;, &#34;Shift  Diff 6%&#34;, &#34;Student Onetime Pay&#34;
+</span></span><span class=line><span class=cl>                                            If subPayComponent = &#34;Activity Pay (Not Reported)&#34; Then
+</span></span><span class=line><span class=cl>                                                basePayTotal = basePayTotal
+</span></span><span class=line><span class=cl>                                            Else
+</span></span><span class=line><span class=cl>                                                basePayTotal = basePayTotal + subValueToSum
+</span></span><span class=line><span class=cl>                                            End If
+</span></span><span class=line><span class=cl>                                        Case &#34;Floating Holiday&#34;
+</span></span><span class=line><span class=cl>                                            floatingHolidayTotal = floatingHolidayTotal + subValueToSum
+</span></span><span class=line><span class=cl>                                        Case &#34;Holiday (Exempt)&#34;
+</span></span><span class=line><span class=cl>                                            holidayTotal = holidayTotal + subValueToSum
+</span></span><span class=line><span class=cl>                                        Case &#34;Sick / EIB Pay&#34;
+</span></span><span class=line><span class=cl>                                            sickTotal = sickTotal + subValueToSum
+</span></span><span class=line><span class=cl>                                        Case &#34;Vacation / PTO&#34;, &#34;Vacation / PTO Payout&#34;
+</span></span><span class=line><span class=cl>                                            vacationTotal = vacationTotal + subValueToSum
+</span></span><span class=line><span class=cl>                                    End Select
+</span></span><span class=line><span class=cl>                                End If
+</span></span><span class=line><span class=cl>                            End If
+</span></span><span class=line><span class=cl>                        Next subRow
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                        &#39; Write tiedKey and component totals to the sheet after processing all rows for this tiedKey
+</span></span><span class=line><span class=cl>                        wsNew.Cells(tiedKeyRow, &#34;B&#34;).Value = tiedKey &#39; Tied Key
+</span></span><span class=line><span class=cl>                        wsNew.Cells(payComponentRow, &#34;C&#34;).Value = basePayTotal &#39; Base Pay Total
+</span></span><span class=line><span class=cl>                        wsNew.Cells(payComponentRow + 1, &#34;C&#34;).Value = sickTotal &#39; Sick Pay Total
+</span></span><span class=line><span class=cl>                        wsNew.Cells(payComponentRow + 2, &#34;C&#34;).Value = vacationTotal &#39; Vacation Pay Total
+</span></span><span class=line><span class=cl>                        wsNew.Cells(payComponentRow + 3, &#34;C&#34;).Value = holidayTotal &#39; Holiday Pay Total
+</span></span><span class=line><span class=cl>                        wsNew.Cells(payComponentRow + 4, &#34;C&#34;).Value = floatingHolidayTotal &#39; Floating Holiday Pay Total
+</span></span><span class=line><span class=cl>                        wsNew.Cells(payComponentRow + 5, &#34;C&#34;).Value = adminLeaveTotal &#39; Admin Leave Pay Total
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>                        &#39; Increment tiedKeyRow and payComponentRow for the next entry (row offset of 7)
+</span></span><span class=line><span class=cl>                        tiedKeyRow = tiedKeyRow + 7
+</span></span><span class=line><span class=cl>                        payComponentRow = payComponentRow + 7
+</span></span><span class=line><span class=cl>                    End If
+</span></span><span class=line><span class=cl>                End If
+</span></span><span class=line><span class=cl>            End If
+</span></span><span class=line><span class=cl>        Next row
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        &#39; insert logic for TO DRIVER
+</span></span><span class=line><span class=cl>        &#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;
+</span></span><span class=line><span class=cl>        &#39; need a secondary journalPeriod(To) variable to prevent interference with primary var
+</span></span><span class=line><span class=cl>        &#39; reset journalPeriod with next monthName as monthly loop progresses
+</span></span><span class=line><span class=cl>        Select Case monthName
+</span></span><span class=line><span class=cl>            Case &#34;January&#34;: journalPeriodTo = &#34;Jan %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;February&#34;: journalPeriodTo = &#34;Feb %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;March&#34;: journalPeriodTo = &#34;Mar %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;April&#34;: journalPeriodTo = &#34;Apr %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;May&#34;: journalPeriodTo = &#34;May %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;June&#34;: journalPeriodTo = &#34;Jun %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;July&#34;: journalPeriodTo = &#34;Jul %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;August&#34;: journalPeriodTo = &#34;Aug %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;September&#34;: journalPeriodTo = &#34;Sep %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;October&#34;: journalPeriodTo = &#34;Oct %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;November&#34;: journalPeriodTo = &#34;Nov %&#34;
+</span></span><span class=line><span class=cl>            Case &#34;December&#34;: journalPeriodTo = &#34;Dec %&#34;
+</span></span><span class=line><span class=cl>            Case Else: journalPeriodTo = &#34;S-May&#34;
+</span></span><span class=line><span class=cl>        End Select
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        &#39; Display the entered Journal Period for verification
+</span></span><span class=line><span class=cl>   &#39;     wsNew.Range(&#34;M32&#34;).Value = journalPeriodTo &#39; View Journal Period used
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        &#39; Find matching column for the month in &#34;Test_PS&#34; row 11
+</span></span><span class=line><span class=cl>        On Error Resume Next
+</span></span><span class=line><span class=cl>        matchCol = wsToTest.Rows(18).Find(What:=journalPeriodTo, LookIn:=xlValues, LookAt:=xlWhole).Column
+</span></span><span class=line><span class=cl>        On Error GoTo 0 &#39; Reset error handling after search
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        If matchCol = 0 Then
+</span></span><span class=line><span class=cl>            MsgBox &#34;No matching month found in row 11 of &#39;PS_Copy&#39; tab.&#34;, vbCritical
+</span></span><span class=line><span class=cl>            Exit Sub
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        &#39; Start searching for a match only in rows greater than row 12
+</span></span><span class=line><span class=cl>        On Error Resume Next
+</span></span><span class=line><span class=cl>        matchRow = wsToTest.Columns(matchCol).Find(What:=&#34;%&#34;, After:=wsToTest.Cells(18, matchCol), LookIn:=xlValues, LookAt:=xlPart).row
+</span></span><span class=line><span class=cl>        On Error GoTo 0 &#39; Reset error handling after search
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        If matchRow = 0 Or matchRow &lt;= 18 Then
+</span></span><span class=line><span class=cl>            MsgBox &#34;No matching percentage value found below row 12 in column for the month on &#39;PS_Copy&#39; tab.&#34;, vbCritical
+</span></span><span class=line><span class=cl>            Exit Sub
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        &#39; **Fix for Error 1004: Ensure matchRow and matchCol are within valid range**
+</span></span><span class=line><span class=cl>        If matchRow &gt; wsToTest.Rows.Count Or matchCol &gt; wsToTest.Columns.Count Then
+</span></span><span class=line><span class=cl>            MsgBox &#34;Invalid row or column detected. Macro will exit.&#34;, vbCritical
+</span></span><span class=line><span class=cl>            Exit Sub
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        &#39; Retrieve percentage value safely
+</span></span><span class=line><span class=cl>        On Error Resume Next
+</span></span><span class=line><span class=cl>        percentageValue = wsToTest.Cells(matchRow, matchCol).Value
+</span></span><span class=line><span class=cl>        On Error GoTo 0 &#39; Reset error handling
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        &#39; Fill B25 (B18) or the next available blank cell with the value from Column B safely
+</span></span><span class=line><span class=cl>        If matchRow &gt; 0 Then
+</span></span><span class=line><span class=cl>            Dim targetCell, targetCell2 As Range
+</span></span><span class=line><span class=cl>            Set targetCell = wsNew.Range(&#34;B18&#34;)
+</span></span><span class=line><span class=cl>            Set targetCell2 = wsNew.Range(&#34;G18&#34;)
+</span></span><span class=line><span class=cl>            toTestRow = 25 &#39;offset by 7 for the 2nd To worktag entry after the initial one is detected to be used in the Do While cumulativeTotal &lt; 1 loop below
+</span></span><span class=line><span class=cl>            Dim searchValue As String
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            searchValue = Trim(wsToTest.Cells(matchRow, 7).Value)
+</span></span><span class=line><span class=cl>            searchValue = FindCOAValue(searchValue)
+</span></span><span class=line><span class=cl>            Debug.Print searchValue &amp; &#34;---&#34;
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            &#39; Loop until a blank cell is found
+</span></span><span class=line><span class=cl>            Do While targetCell.Value &lt;&gt; &#34;&#34;
+</span></span><span class=line><span class=cl>                If targetCell.Value = searchValue Then
+</span></span><span class=line><span class=cl>                    Exit Do
+</span></span><span class=line><span class=cl>                End If
+</span></span><span class=line><span class=cl>                &#39;Debug.Print targetCell.Value
+</span></span><span class=line><span class=cl>                &#39;Debug.Print wsToTest.Cells(matchRow, 7).Value
+</span></span><span class=line><span class=cl>                Set targetCell = targetCell.Offset(7, 0) &#39; Move down by 7 rows
+</span></span><span class=line><span class=cl>                Set targetCell2 = targetCell2.Offset(7, 0) &#39; Move down by 7 rows
+</span></span><span class=line><span class=cl>                toTestRow = toTestRow + 7
+</span></span><span class=line><span class=cl>            Loop
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>            &#39; Write the value to the first available blank cell
+</span></span><span class=line><span class=cl>            targetCell.Value = searchValue
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            &#39; Ensure percentageValue is valid
+</span></span><span class=line><span class=cl>            If IsNumeric(percentageValue) And Not IsEmpty(percentageValue) Then
+</span></span><span class=line><span class=cl>                percentageValue = CDbl(percentageValue)
+</span></span><span class=line><span class=cl>                targetCell2.Value = percentageValue
+</span></span><span class=line><span class=cl>            Else
+</span></span><span class=line><span class=cl>                percentageValue = 0
+</span></span><span class=line><span class=cl>            End If
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        &#39; If percentage is less than 1, continue filling values conditionally
+</span></span><span class=line><span class=cl>        If percentageValue &lt; 1 Then
+</span></span><span class=line><span class=cl>            cumulativeTotal = percentageValue
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>            Do While cumulativeTotal &lt; 1 Or (journalPeriodTo = &#34;S-May&#34; And cumulativeTotal &lt; 2)
+</span></span><span class=line><span class=cl>                matchRow = matchRow + 1 &#39; Move to the succeeding row in &#39;Test_PS&#39;
+</span></span><span class=line><span class=cl>                
+</span></span><span class=line><span class=cl>                &#39; **Ensure matchRow doesn&#39;t exceed worksheet limits**
+</span></span><span class=line><span class=cl>                If matchRow &gt; wsToTest.Rows.Count Then
+</span></span><span class=line><span class=cl>                    MsgBox &#34;Reached end of data in &#39;PS_Copy&#39;. Macro will exit.&#34;, vbCritical
+</span></span><span class=line><span class=cl>                    Exit Sub
+</span></span><span class=line><span class=cl>                End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>                On Error Resume Next
+</span></span><span class=line><span class=cl>                percentageValue = wsToTest.Cells(matchRow, matchCol).Value
+</span></span><span class=line><span class=cl>                
+</span></span><span class=line><span class=cl>                On Error GoTo 0 &#39; Reset error handling
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>                &#39; Ensure percentage value is valid
+</span></span><span class=line><span class=cl>                &#39; **************** [HARDCODED] UPDATE &#39;2026&#39; VALUE FOR NEW FISCAL YEAR ************************************
+</span></span><span class=line><span class=cl>                If IsNumeric(percentageValue) And Not IsEmpty(percentageValue) And percentageValue &lt;&gt; 0 And wsToTest.Cells(matchRow, 13).Value = fYear Then
+</span></span><span class=line><span class=cl>                    percentageValue = CDbl(percentageValue)
+</span></span><span class=line><span class=cl>                    cumulativeTotal = cumulativeTotal + percentageValue
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>                    &#39; Fill values in the &#34;Test&#34; tab
+</span></span><span class=line><span class=cl>                    Dim scanDriverLoc As Long
+</span></span><span class=line><span class=cl>                    scanDriverLoc = 18
+</span></span><span class=line><span class=cl>                    
+</span></span><span class=line><span class=cl>                    searchValue = Trim(wsToTest.Cells(matchRow, 7).Value)
+</span></span><span class=line><span class=cl>                    searchValue = FindCOAValue(searchValue)
+</span></span><span class=line><span class=cl>                    
+</span></span><span class=line><span class=cl>                    Do While scanDriverLoc &lt;&gt; toTestRow
+</span></span><span class=line><span class=cl>                        If wsNew.Cells(scanDriverLoc, &#34;B&#34;).Value = wsToTest.Cells(matchRow, 7).Value Then
+</span></span><span class=line><span class=cl>                        Debug.Print matchRow
+</span></span><span class=line><span class=cl>                        Debug.Print wsToTest.Cells(matchRow, 7).Value
+</span></span><span class=line><span class=cl>                        Debug.Print wsNew.Cells(scanDriverLoc, &#34;B&#34;).Value
+</span></span><span class=line><span class=cl>                            Exit Do
+</span></span><span class=line><span class=cl>                        End If
+</span></span><span class=line><span class=cl>                        scanDriverLoc = scanDriverLoc + 7
+</span></span><span class=line><span class=cl>                    Loop
+</span></span><span class=line><span class=cl>                    
+</span></span><span class=line><span class=cl>                    wsNew.Cells(scanDriverLoc, &#34;G&#34;).Value = percentageValue &#39; Next percentage value
+</span></span><span class=line><span class=cl>                    
+</span></span><span class=line><span class=cl>                    If matchRow &gt; 0 And scanDriverLoc = toTestRow Then
+</span></span><span class=line><span class=cl>                        wsNew.Cells(toTestRow, &#34;B&#34;).Value = wsToTest.Cells(matchRow, 7).Value &#39; Column B reference
+</span></span><span class=line><span class=cl>                    End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>                    &#39; Increment toTestRow only if percentageValue is valid
+</span></span><span class=line><span class=cl>                    toTestRow = toTestRow + 7
+</span></span><span class=line><span class=cl>                End If
+</span></span><span class=line><span class=cl>            Loop
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>        &#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;
+</span></span><span class=line><span class=cl>    Next monthName
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &#39; Inform the user
+</span></span><span class=line><span class=cl>    MsgBox &#34;Sheets created.&#34;, vbInformation, &#34;Success&#34;
+</span></span><span class=line><span class=cl>End Sub
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Function FindCOAValue(searchValue As String) As Variant
+</span></span><span class=line><span class=cl>    Dim ws As Worksheet
+</span></span><span class=line><span class=cl>    Dim lastrow As Long
+</span></span><span class=line><span class=cl>    Dim rng As Range, cell As Range
+</span></span><span class=line><span class=cl>    Dim matches As Collection
+</span></span><span class=line><span class=cl>    Dim candidateValue As String
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    Set ws = ThisWorkbook.Worksheets(&#34;Master&#34;)
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    lastrow = ws.Cells(ws.Rows.Count, &#34;A&#34;).End(xlUp).row
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    Set matches = New Collection
+</span></span><span class=line><span class=cl>    Set rng = ws.Range(&#34;A1:A&#34; &amp; lastrow)
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    For Each cell In rng
+</span></span><span class=line><span class=cl>        If Trim(cell.Value) = searchValue Then
+</span></span><span class=line><span class=cl>            matches.Add cell.row
+</span></span><span class=line><span class=cl>            Debug.Print (ws.Cells(cell.row, &#34;B&#34;))
+</span></span><span class=line><span class=cl>        End If
+</span></span><span class=line><span class=cl>    Next cell
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    If matches.Count = 1 Then
+</span></span><span class=line><span class=cl>        FindCOAValue = ws.Cells(matches(1), &#34;B&#34;)
+</span></span><span class=line><span class=cl>        Exit Function
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    If matches.Count &gt; 1 Then
+</span></span><span class=line><span class=cl>        candidateValue = searchValue &amp; &#34;-3&#34;
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        For Each r In matches
+</span></span><span class=line><span class=cl>            If ws.Cells(r, &#34;B&#34;).Value = candidateValue Then
+</span></span><span class=line><span class=cl>                FindCOAValue = ws.Cells(r, &#34;B&#34;).Value
+</span></span><span class=line><span class=cl>                Exit Function
+</span></span><span class=line><span class=cl>            End If
+</span></span><span class=line><span class=cl>        Next r
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        FindCOAValue = ws.Cells(matches(1), &#34;B&#34;).Value
+</span></span><span class=line><span class=cl>    End If
+</span></span><span class=line><span class=cl>End Function
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Sub RefreshData()
+</span></span><span class=line><span class=cl>    ThisWorkbook.RefreshAll
+</span></span><span class=line><span class=cl>    MsgBox &#34;Data has been refreshed successfully.&#34;
+</span></span><span class=line><span class=cl>End Sub
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-tags><a href=/blog/tags/excel/>Excel</a>
+<a href=/blog/tags/vba/>VBA</a>
+<a href=/blog/tags/automation/>Automation</a></section><section class=article-lastmod><svg class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<span>Last updated on Dec 02, 2025</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=/blog/p/covid-19-case-analysis-pt2-income-class/><div class=article-image><img src=/blog/p/covid-19-case-analysis-pt2-income-class/cover.e06d9466e2011fb35e67050fd481eb4a_hu_fa477e462ca19cf5.jpg width=250 height=150 loading=lazy alt="Featured image of post COVID-19 Case Analysis PT2 Income Class" data-hash="md5-4G2UZuIBH7NeZwUP1IHrSg=="></div><div class=article-details><h2 class=article-title>COVID-19 Case Analysis PT2 Income Class</h2></div></a></article><article><a href=/blog/p/early-pandemic-covid-19-case-analysis/><div class=article-details><h2 class=article-title>Early Pandemic COVID-19 Case Analysis</h2></div></a></article><article class=has-image><a href=/blog/p/game-devlog-10/22/2025/><div class=article-image><img src=/blog/p/game-devlog-10/22/2025/cover.21b66800a65a6dc9a1a26b2c24f2535e_hu_8d4288940d262add.jpg width=250 height=150 loading=lazy alt="Featured image of post Game Devlog 10/22/2025" data-hash="md5-IbZoAKZabcmhomssJPJTXg=="></div><div class=article-details><h2 class=article-title>Game Devlog 10/22/2025</h2></div></a></article><article class=has-image><a href=/blog/p/game-devlog-9/12/2025/><div class=article-image><img src=/blog/p/game-devlog-9/12/2025/cover.b3919a8ae44d3c29f5c90e96eb7a2f70_hu_13b7c80cae8c0a3c.jpg width=250 height=150 loading=lazy alt="Featured image of post Game Devlog 9/12/2025" data-hash="md5-s5GaiuRNPCn1yQ6W63ovcA=="></div><div class=article-details><h2 class=article-title>Game Devlog 9/12/2025</h2></div></a></article><article class=has-image><a href=/blog/p/building-my-first-sales-dashboard-in-power-bi/><div class=article-image><img src=/blog/p/building-my-first-sales-dashboard-in-power-bi/cover.7fcb108d1a914302ca418c8d31bb4ff6_hu_fe0afcb77336b44c.png width=250 height=150 loading=lazy alt="Featured image of post Building My First Sales Dashboard in Power BI" data-hash="md5-f8sQjRqRQwLKQYyNMbtP9g=="></div><div class=article-details><h2 class=article-title>Building My First Sales Dashboard in Power BI</h2></div></a></article></div></div></aside><div class=disqus-container><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//hugo-theme-stack.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div><style>.disqus-container{background-color:var(--card-background);border-radius:var(--card-border-radius);box-shadow:var(--shadow-l1);padding:var(--card-padding)}</style><script>window.addEventListener("onColorSchemeChange",e=>{typeof DISQUS=="object"&&DISQUS.reset({reload:!0})})</script><footer class=site-footer><section class=copyright>&copy;
+2023 -
+2025 ArnoldAnt Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.32.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=/blog/ts/main.c922af694cc257bf1ecc41c0dd7b0430f9114ec280ccf67cd2c6ad55f5316c4e.js defer></script><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>

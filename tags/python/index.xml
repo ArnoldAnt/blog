@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on ArnoldAnt Blog</title><link>https://arnoldant.github.io/blog/tags/python/</link><description>Recent content in Python on ArnoldAnt Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://arnoldant.github.io/blog/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Game Devlog 10/22/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-10/22/2025/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-10/22/2025/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/game-devlog-10/22/2025/cover.jpg" alt="Featured image of post Game Devlog 10/22/2025" /&gt;&lt;p&gt;Hey everyone! 👋&lt;/p&gt;
+&lt;p&gt;It’s been a little while since my last post, but don’t worry! I’ve still been working on Project Five every single day. I decided to focus more on actually making the game and recording gameplay footage rather than editing and posting updates. That said, there’s been a ton of progress behind the scenes that I can’t wait to start sharing again.&lt;/p&gt;
+&lt;p&gt;Today, I’m excited to show a new combat preview that highlights where the game’s roguelike mechanics truly start to shine. Each ring you equip now comes with a random buff, adding a whole new layer of depth and replayability to the gameplay.&lt;/p&gt;
+&lt;p&gt;Here are some examples of what you can expect:&lt;/p&gt;
+&lt;p&gt;🔥 Damage buffs for specific elements
+⚡ Reload speed reductions for faster attacks
+🦾 Augment buffs that directly enhance the hand — reserved only for legendary rings&lt;/p&gt;
+&lt;p&gt;Legendary rings drop with their unique, fixed augment buff, while common buffs can stack, making your character incredibly powerful with the right combinations.&lt;/p&gt;
+&lt;p&gt;Alongside the combat overhaul, I’ve also updated the HUD, refined enemy behavior, and made improvements to the background visuals to give the world more atmosphere and depth.&lt;/p&gt;
+&lt;p&gt;There’s still so much more I want to share — but for now, check out the new combat video!
+I hope you enjoy the video and stay tuned for more updates.&lt;/p&gt;
+&lt;p&gt;#IndieDev #GameDev #PixelArt #Devlog #PoisonAbilities #DanceMinigame&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/pPG12fXDAi0"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Game Devlog 9/12/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-9/12/2025/</link><pubDate>Fri, 12 Sep 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-9/12/2025/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/game-devlog-9/12/2025/cover.jpg" alt="Featured image of post Game Devlog 9/12/2025" /&gt;&lt;p&gt;This week’s update brings some exciting new systems and enemy tweaks to the game.&lt;/p&gt;
+&lt;p&gt;🟢 Slime Improvements&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Slimes now hop with varied timers for more natural movement&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cleaner, more efficient code and updated animations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Particle effects make them feel livelier than ever&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;☠️ Poison Abilities&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Added a poison grenade and a ticking poison effect&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spewer enemies are immune, adding a layer of strategy&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🤸‍♂️ Player Tumble Animation&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;New mid-air tumble animation decreases hitbox size, perfect for dodging attacks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;💃 Dance Room Expansion&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ambient lighting, new scenery, and dancing characters&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A nod to some beloved cats, bringing a fun, lighthearted change of pace&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;What’s next? More ring abilities and environmental variety are on the way!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;#IndieDev #GameDev #PixelArt #Devlog #PoisonAbilities #DanceMinigame&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/33zHAZg_TSU"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Game Devlog 9/08/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-9/08/2025/</link><pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-9/08/2025/</guid><description>&lt;p&gt;This week’s update brought some big changes to the game, both in terms of enemies and new gameplay systems.&lt;/p&gt;
+&lt;p&gt;🦴 The Guard Skeleton&lt;/p&gt;
+&lt;p&gt;I introduced a brand-new enemy type: the Guard Skeleton.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Equipped with a spear and shield&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shield can block attacks, making combat more strategic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Patrols the area and chases the player once spotted&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This enemy is meant to feel tougher and more tactical than the regular ones, adding variety to encounters.&lt;/p&gt;
+&lt;p&gt;💚 Slime Overhaul&lt;/p&gt;
+&lt;p&gt;The Slime also received an upgrade.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Cleaner, more efficient code behind the scenes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Improved animations for smoother movement&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Added particle effects to give it more personality&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It feels a lot more alive now, and it’s fun watching it bounce around.&lt;/p&gt;
+&lt;p&gt;🕺 The Dancing Room&lt;/p&gt;
+&lt;p&gt;The biggest addition is the Dancing Room, a brand-new minigame!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Inspired by DDR-style rhythm gameplay&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Features dance animations for the player character&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adds a lighthearted, fun change of pace from the usual combat&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This was a big step toward making the game feel more varied and unique.&lt;/p&gt;
+&lt;p&gt;What’s Next?&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m planning to work on the ring abilities and to add more variety to the environment, so stay tuned!&lt;/p&gt;
+&lt;p&gt;Thanks for following along with the development. If you’ve got ideas, feedback, or just want to cheer the project on, I’d love to hear from you.&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/upBbece54Fw"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Game Devlog 8/28/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-8/28/2025/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-8/28/2025/</guid><description>&lt;p&gt;🔥 Devlog Update – New Abilities, Sticky Terrain &amp;amp; Dungeon Progress! 🔥&lt;/p&gt;
+&lt;p&gt;Since the last update, I’ve been grinding away under the hood and adding a ton of new mechanics and systems to the game:&lt;/p&gt;
+&lt;p&gt;⚔️ Code &amp;amp; Systems Updates&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Reworked player states and grapple system for smoother transitions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Improved how special terrain interacts with movement.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Optimized under-the-hood code for better performance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🏰 Dungeon Expansion&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Added a new dungeon room with unique layouts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Special terrain now plays a bigger role in exploration and challenge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔥 New Fire Abilities&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Flame Double Jump – launch yourself with a fiery boost! Does damage to unfortunate souls beneath you.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fire Shotgun – unleash a blast of pellet-like flames to clear enemies up close.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🕸️ Sticky Terrain&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A new environmental hazard: sticky ground that reduces your mobility and jump height, forcing more careful platforming and combat decisions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There’s still a lot to come, but I’m super excited about the direction the game is taking. Let me know what you think of the new abilities and terrain system!&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/KxXOuelvlVg"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Game Devlog 8/22/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-8/22/2025/</link><pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-8/22/2025/</guid><description>&lt;p&gt;It’s been a packed week of development, and the game is starting to feel more alive with each update. Here’s a breakdown of everything I’ve added since last time:&lt;/p&gt;
+&lt;p&gt;🏠 Placeholder Main Menu&lt;/p&gt;
+&lt;p&gt;The project finally has a main menu! It’s simple for now, but it includes the basics: Start, Options, and Exit. This small step makes the game feel more like a complete experience instead of just jumping straight into gameplay.&lt;/p&gt;
+&lt;p&gt;❤️ Classic Zelda-Style Health System&lt;/p&gt;
+&lt;p&gt;I’ve swapped out the old placeholder health bar for a heart-based system, inspired by the classics. Each heart represents a chunk of health, and losing them feels satisfying and clear in a way that fits the game’s retro-inspired style.&lt;/p&gt;
+&lt;p&gt;⚡ New Lightning Abilities&lt;/p&gt;
+&lt;p&gt;The main character’s powers continue to evolve with two huge new additions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Triple Lightning Strike – With the lightning ring equipped, you can now call down three bolts of destruction, chaining your power together for massive damage.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Aerial Lightning Slam – Jump into the air and crash down, unleashing a thunderous lightning blast that strikes both enemies and the ground itself.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both moves make combat feel more dynamic and give you more tools for chaining attacks together.&lt;/p&gt;
+&lt;p&gt;🗝️ Secret Areas &amp;amp; Treasure&lt;/p&gt;
+&lt;p&gt;Exploration just got more rewarding. I’ve added hidden rooms tucked away behind destructible terrain. If you’re curious enough to search, you’ll find secret chests waiting with valuable loot. This adds a nice layer of discovery and makes exploration more engaging.&lt;/p&gt;
+&lt;p&gt;👾 New Enemy: The Spewer&lt;/p&gt;
+&lt;p&gt;A fresh foe enters the battlefield: the Spewer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;It burrows underground to reposition.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Pops up to spit poison projectiles.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Forces you to stay mobile and adapt.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It’s a fun twist compared to the melee-focused enemies so far and adds variety to combat encounters.&lt;/p&gt;
+&lt;p&gt;💡 Lighting &amp;amp; Shadows&lt;/p&gt;
+&lt;p&gt;To improve atmosphere, I’ve implemented dynamic lighting with terrain casting shadows. This small change makes the world feel richer and adds depth to caves, secret areas, and combat arenas.&lt;/p&gt;
+&lt;p&gt;✅ What’s Next?&lt;/p&gt;
+&lt;p&gt;With combat, exploration, and visual polish all improving, the game is slowly shaping into something cohesive. Next up, I’ll be refining the feel of combat even more and expanding enemy variety.&lt;/p&gt;
+&lt;p&gt;Thanks for following along! This week’s changes made a huge difference in how the game plays and feels. Can’t wait to show you what’s coming next!&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/mAfnA43Iw9c"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Game Devlog 8/15/2025</title><link>https://arnoldant.github.io/blog/p/game-devlog-8/15/2025/</link><pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/game-devlog-8/15/2025/</guid><description>&lt;p&gt;I’m excited to share the first gameplay video from my 2D pixel roguelite game! Right now, the character has a basic punch, a grapple swing mechanic, and just three rooms to explore, but it’s already fun to see everything coming together.&lt;/p&gt;
+&lt;p&gt;In this clip, you’ll get a glimpse of the movement and combat mechanics, including grappling through rooms and defeating the first slime enemy. It’s still early days, but seeing the mechanics in action really brings the world I’m building to life.&lt;/p&gt;
+&lt;p&gt;I’ll be sharing more updates as the game grows, with new abilities, enemies, and levels. It’s exciting to finally give a peek behind the curtain at how the game is shaping up!&lt;/p&gt;
+&lt;p&gt;Software used: Python, Godot Engine, Aseprite&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/9XusotRm1eE"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Introduction to my Biggest Project</title><link>https://arnoldant.github.io/blog/p/introduction-to-my-biggest-project/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/introduction-to-my-biggest-project/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/introduction-to-my-biggest-project/cover.gif" alt="Featured image of post Introduction to my Biggest Project" /&gt;&lt;p&gt;It’s been a while since I last shared a project here. Life got busy, and I stepped away from posting updates for longer than I planned. I’m sorry for the hiatus, but I’m excited to be back with something a little different this time.&lt;/p&gt;
+&lt;p&gt;While most of my past posts have focused on data analysis, SQL, and R, I’ve recently revisited a long-time passion of mine: game development. Over the past few months, I’ve been working on a 2D pixel video game with roguelite mechanics, lightning-based abilities, and a story that balances lighthearted moments with a touch of tragedy. It’s been an amazing creative challenge, completely different from my usual analytical projects, but just as rewarding.&lt;/p&gt;
+&lt;p&gt;I’ll be sharing more updates on this game and new data-driven projects soon. Thanks for sticking around during the break, and I’m excited to bring more to this space again!&lt;/p&gt;
+&lt;p&gt;Software used: Python, Godot Engine, Aseprite&lt;/p&gt;</description></item><item><title>Research - Neural Networks and Image Classification</title><link>https://arnoldant.github.io/blog/p/research-neural-networks-and-image-classification/</link><pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate><guid>https://arnoldant.github.io/blog/p/research-neural-networks-and-image-classification/</guid><description>&lt;img src="https://arnoldant.github.io/blog/p/research-neural-networks-and-image-classification/cover.jpg" alt="Featured image of post Research - Neural Networks and Image Classification" /&gt;&lt;p&gt;In this project, the concept of artificial neural networks will be reviewed and applied to a binary image classification problem. First, an in-depth description of neural networks is done, fundamentally defining the key components of their structure and the mathematical concepts used to construct them. The concepts involving activation functions, gradient descent, and backpropagation will also be touched upon. In addition, customizable variables will be introduced to deter overfitting and enable user-led optimization practices. This information would then be used to define convolutional neural networks and what enables them to be effective at feature detection. Finally, a binary image classification example using Python and the Keras library is showcased to show the effectiveness of neural networks in solving real-world problems. This example implements image pattern recognition to classify whether a patient has pneumonia based on X-Ray images.&lt;/p&gt;
+&lt;p&gt;Software used: Python, Keras, Kaggle, TensorFlow, matplotlib&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://arnoldant.github.io/website/posts/pp7/NN-IC-AA.pdf" target="_blank" rel="noopener"
+&gt;Neural Networks Research Paper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://arnoldant.github.io/blog/p/research-neural-networks-and-image-classification/Capture.png"
+width="714"
+height="592"
+srcset="https://arnoldant.github.io/blog/p/research-neural-networks-and-image-classification/Capture_hu_8889c1ce25cbcdb0.png 480w, https://arnoldant.github.io/blog/p/research-neural-networks-and-image-classification/Capture_hu_7b36bff0018e0fa3.png 1024w"
+loading="lazy"
+alt="Positive Case of Pneumonia"
+class="gallery-image"
+data-flex-grow="120"
+data-flex-basis="289px"
+&gt;&lt;/p&gt;</description></item></channel></rss>
