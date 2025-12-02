@@ -1,7 +1,7 @@
 ---
 title: Automating Financial Processes in Excel
 description:  Using VBA to Automate a Financial Allocation Process in Excel
-date: 2025-09-10 00:00:00+0000
+date: 2025-12-02 00:00:00+0000
 categories:
     - Projects
 tags:
